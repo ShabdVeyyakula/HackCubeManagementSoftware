@@ -7,11 +7,12 @@ import Topbar from '../navbars/Topbar';
 import Event from '../reusable/Event'
 import Chat from '../reusable/Chat'
 import firebase from '../../firebase/init'
-
+ 
 function test(){
     var data = firebase.db.collection("Clubs").get()
     console.log("hello1111")
 }
+
 
 export class dashboard extends Component {
 
@@ -62,6 +63,6 @@ export class dashboard extends Component {
         )
     }
 }
-test();
+
 
 export default dashboard;
