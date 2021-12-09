@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
-import ChatContentDashboard from '../reusable/ChatContentDashboard'
+import ChatContentDashboardLeft from './ChatContentDashboardLeft'
+import ChatContentDashboardRight from './ChatContentDashboardRight'
+
 import '../../App.css'
 
 
@@ -13,7 +15,8 @@ export class Chat extends Component {
                     <div className = "chatBoxtitle">Chat</div>
 
                     <div className = "chatBoxContent">
-                        <ChatContentDashboard />
+                        <ChatContentDashboardLeft />
+                        <ChatContentDashboardRight />
                         
                     </div>
 

@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
-import Profilepic from '../../components/navbars/icons/Profilepic'
+import Profilepic from '../navbars/icons/Profilepic'
 import '../../App.css'
 
 
-export class ChatContentDashboard extends Component {
+export class ChatContentDashboardLeft extends Component {
     render() {
         return (
             <div className = "chatBoxContentSpaced">
@@ -21,4 +21,4 @@ export class ChatContentDashboard extends Component {
     }
 }
 
-export default ChatContentDashboard
+export default ChatContentDashboardLeft
