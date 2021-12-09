@@ -185,7 +185,7 @@
 }
 
 .chatBoxtitle{
-  margin-top: 30px;
+  padding-top: 20px;
   font-weight: bold;
   font-size: 25px;
   margin-left: 30px;
@@ -214,7 +214,7 @@
 }
 
 .chatBoxContent{
-  height: 75%;
+  height: 67%;
 
 }
 
@@ -229,9 +229,14 @@
 }
 
 .chatContentDashboardMessage{
-  max-width: 30rem;
+  max-width: 28rem;
 }
 
 .chatContentDashboardContentContainer{
   margin-left: 15px;
+}
+
+.chatContentDashboardContentContainerRight{
+  margin-right: 15px;
+  text-align: right;
 }

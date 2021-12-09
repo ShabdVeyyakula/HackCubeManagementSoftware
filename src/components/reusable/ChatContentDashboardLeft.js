@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
-import Profilepic from '../../components/navbars/icons/Profilepic'
+import Profilepic from '../navbars/icons/Profilepic'
 import '../../App.css'
 
 
-export class ChatContentDashboard extends Component {
+export class ChatContentDashboardLeft extends Component {
     render() {
         return (
             <div className = "chatBoxContentSpaced">
@@ -12,7 +12,7 @@ export class ChatContentDashboard extends Component {
                     <Profilepic/>
 
                     <div className = "chatContentDashboardContentContainer">
-                        <h1>Shabd Veyyakula</h1>
+                        <h2>Shabd Veyyakula</h2>
                         <h4 className = "chatContentDashboardMessage">Hello this is a test message can you see this. I hope that you can since I sent you this text message lol.</h4>
                     </div>
                 </div>
@@ -21,4 +21,4 @@ export class ChatContentDashboard extends Component {
     }
 }
 
-export default ChatContentDashboard
+export default ChatContentDashboardLeft
