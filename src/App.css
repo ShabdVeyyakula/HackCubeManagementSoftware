@@ -113,6 +113,8 @@
 .centerSection{
   width: 60%;
   margin-left: 6%;
+  height: 100vh;
+  margin-top: -3vh;
 }
 
 .stats-box-title{
@@ -141,12 +143,14 @@
   width: 30px;
   height: 30px;
   filter: invert(18%) sepia(87%) saturate(7469%) hue-rotate(268deg) brightness(101%) contrast(100%);
+  margin-top: 2rem;
+  margin-left: 2rem;
 
 
 }
 
 .topbar-container{
-  width: 160px;
+  width: 180px;
   margin-top: 2%;
   margin-left: 2%;
 }
@@ -154,6 +158,7 @@
 .topbar-text{
   font-size: 25px;
   font-weight: bold;
+  margin-top: 1.5rem;
 }
 
 .eventBox{
@@ -164,5 +169,50 @@
   margin-top: 100px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
     border-radius: 10px;
+
+}
+
+
+.chatBox{
+  height: 45rem;
+  width:450px;
+  background-color: white;
+  margin-left: 150px;
+  margin-top: 100px;
+  border-radius: 20px;
+
+}
+
+.chatBoxtitle{
+  margin-top: 30px;
+  font-weight: bold;
+  font-size: 25px;
+  margin-left: 30px;
+}
+
+.someBackground{
+  background-color: #F8F8F8;
+}
+
+.chatBoxSubmitBox{
+  height: 50px;
+  width: 32rem;
+  border: 1px solid #DEDEDE;
+  border-radius: 20px;
+  font-size: 25px;
+}
+
+.chatBoxSubmitButton{
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: transparent;
+  border: 1px solid black;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.chatBoxContent{
+  height: 75%;
 
 }
