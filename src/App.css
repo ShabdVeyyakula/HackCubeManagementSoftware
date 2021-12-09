@@ -216,3 +216,21 @@
   height: 75%;
 
 }
+
+.profilePicChatContent{
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.chatBoxContentSpaced{
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+.chatContentDashboardMessage{
+  max-width: 30rem;
+}
+
+.chatContentDashboardContentContainer{
+  margin-left: 15px;
+}
