@@ -11,10 +11,13 @@
 
 .name {
   font-size: 30px;
+  margin-top: 10%;
 }
 
 .upcomming {
   margin-top: 50px;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .dropdown {
@@ -24,12 +27,13 @@
   border-radius: 20px;
   padding-top: 2px;
   float: right;
-  margin-right: 20px;
+  font-size: 15px;
+  margin-right: 40px;
 
 }
 
 .icon {
-  margin-top: 160px;
+  margin-top: 30%;
 }
 
 .rowFlex{
@@ -40,10 +44,12 @@
   padding-top: 10px;
   padding-left: 10px;
   color: #E59C4C;
+  font-size: 20px;
 }
 .iconTag2{
   margin-top: -15px;
   padding-left: 10px;
+  font-size: 17px;
 }
 .calendarIcon{
   width: 40px;
@@ -52,6 +58,7 @@
 .peopleGoingText{
   color: black;
   margin-top: 70px;
+  font-size: 20px;
 }
 
 .circleIcon{
