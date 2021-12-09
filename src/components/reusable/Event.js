@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
+import Inperson from '../reusable/Inperson'
+
 
 
 export class Event extends Component {
@@ -7,7 +9,7 @@ export class Event extends Component {
         return (
             <div>
                 <div className="eventBox row">
-                    hello dud whats up
+                    <Inperson />
                 </div>
             </div>
         )
