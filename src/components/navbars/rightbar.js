@@ -16,7 +16,7 @@ export class rightbar extends Component {
                             <div className = "dropdown">
                                 <div className = "row">
                                     <center>
-                                        <p><b>LA Hacks</b></p>
+                                        <p><b>Merced Hacks</b></p>
                                     </center>
                                 </div>
                             </div>
