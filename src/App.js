@@ -14,11 +14,14 @@ import Dashboard from "./components/pages/dashboard";
 import Messages from "./components/pages/messages";
 import Schedule from "./components/pages/schedule";
 import Gallery from "./components/pages/gallery";
+import firebase from '../src/firebase/init'
 //import Rightbar from './components/navbars/rightbar';
 //import Leftbar from './components/navbars/Leftbar';
 
 
 export default function App() {
+  console.log(firebase.db);
+
   return (
     <Router>
       <div>
