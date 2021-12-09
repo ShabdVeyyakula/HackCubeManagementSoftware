@@ -5,20 +5,16 @@ import Rightbar from '../navbars/rightbar'
 import 'bootstrap/dist/css/bootstrap.css';
 import Topbar from '../navbars/Topbar';
 import Event from '../reusable/Event'
-
+import Chat from '../reusable/Chat'
 
 export class dashboard extends Component {
     render() {
         return (
             <div className = "someBackground"> 
-
                 <div className = "pageLayout">
                     <Leftbar />
                     <div className = "centerSection">
-
                         <Topbar />
-                    
-
                             <div class="d-flex justify-content-center">
                                 <div className = "box-stats-dashboard">
                                             <center className = 'stats-box-interior'>
@@ -27,7 +23,6 @@ export class dashboard extends Component {
                                                         <p className = "stats-box-title">Upcoming Events</p>
                                                         <p className = "stats-box-subtitle">50</p>
                                                     </div>
-
 
                                                     <div className = "col">
                                                         <p className = "stats-box-title">Attended Events</p>
@@ -41,13 +36,17 @@ export class dashboard extends Component {
                                                 </div>
                                             </center>
                                         </div>
-
                                 </div>
 
                                 <div className="row">
-                                    <div>HI</div>
-                                    <Event/>
+                                    <div className = "col">
+                                        <Chat/>
+                                    </div>
 
+                                    <div className = "col">
+                                        <Event/>
+                                    </div>
+                            
                                 </div>
 
 
