@@ -12,7 +12,7 @@ export class ChatContentDashboardLeft extends Component {
                     <Profilepic/>
 
                     <div className = "chatContentDashboardContentContainer">
-                        <h1>Shabd Veyyakula</h1>
+                        <h2>Shabd Veyyakula</h2>
                         <h4 className = "chatContentDashboardMessage">Hello this is a test message can you see this. I hope that you can since I sent you this text message lol.</h4>
                     </div>
                 </div>
