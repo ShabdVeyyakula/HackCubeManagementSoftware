@@ -20,7 +20,7 @@ import firebase from '../src/firebase/init'
 
 
 export default function App() {
-  console.log(firebase.db);
+  console.log("hello");
 
   return (
     <Router>

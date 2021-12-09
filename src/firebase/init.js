@@ -1,6 +1,7 @@
-import { initializeApp } from 'firebase/app';
+import { initializeApp } from 'firebase/app';  
 
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+
+import { getFirestore, collection, query, where, onSnapshot} from 'firebase/firestore';
 // Follow this pattern to import other Firebase services
 // import { } from 'firebase/<service>';
 
@@ -20,11 +21,7 @@ const firebaseConfig = {
 
 
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
 
-console.log(db)
+const db = getFirestore(app)
 
-
-export default {
-  app, db
-}
+export default {db};
