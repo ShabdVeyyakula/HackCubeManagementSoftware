@@ -462,3 +462,7 @@
 .spaceWidth{
     margin-left: 10px;
 }
+
+.redText{
+  color: red;
+}
