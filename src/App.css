@@ -170,6 +170,7 @@
   margin-top: 100px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
     border-radius: 10px;
+  padding-top: 9px;
 
 }
 
@@ -259,7 +260,37 @@
   width: 234px;
   height: 55px;
   margin-top: 180px;
-
   background-color: #f7f7f7;
   border-radius: 10px;
+
+}
+
+.inperson {
+  height: 50px;
+  width: 50px;
+  border-radius: 10px;
+  background-color: #0972D2;
+  padding-top: 10px;
+}
+
+.map-icon { 
+  width: 30px;
+  filter: invert(94%) sepia(0%) saturate(7477%) hue-rotate(296deg) brightness(116%) contrast(105%);
+
+
+}
+
+.padding-0 {
+  padding-right:0;
+  padding-left:0;
+}
+
+.eventName{
+  color: black;
+
+}
+
+.eventDate {
+  color: #B5AAAA;
+  margin-top: -5px;
 }
