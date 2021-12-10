@@ -220,6 +220,8 @@ body {
 .chatBoxContent{
   height: 67%;
   overflow-y: scroll;
+  overflow-x: hidden;
+  margin-bottom: 30px;
 
 }
 
