@@ -14,7 +14,7 @@ import Messages from "./components/pages/messages";
 import Schedule from "./components/pages/schedule";
 import Gallery from "./components/pages/gallery";
 import Login from "./components/pages/login";
-import Sigup from "./components/pages/signup";
+import Signup from "./components/pages/signup";
 
 
 //import Rightbar from './components/navbars/rightbar';
