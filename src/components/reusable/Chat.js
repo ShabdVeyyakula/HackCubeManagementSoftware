@@ -71,6 +71,7 @@ async function sendText(){
 */
 
 class Chat extends Component {
+    
 
     constructor(props) {
         super(props);     
@@ -83,6 +84,7 @@ class Chat extends Component {
         this.sendText = this.sendText.bind(this);
 
     }
+    
 
     
     handleChange(event) {  this.setState({textInput:  event.target.value})  }
