@@ -10,13 +10,17 @@ export class Topbar extends Component {
             <div>
                 <div className = "topbar-container">
                     <div className = "row">
-                        <div className = "col">
+                        <div className = "col-1">
                         <img src = {Cube} className = "icon-topbar"/>
                         </div>
 
-                        <div className = "col">
+                        <div className = "col-7">
                         <p className  = "topbar-text">Hackcube</p>
 
+                        </div>
+
+                        <div className='logout col-3'>
+                            <a><p className='logout-txt'>Logout</p></a>
                         </div>
                         
                         </div>

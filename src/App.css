@@ -1,3 +1,7 @@
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 .rightBarBody {
   height: 100%;
   width: 25%;
@@ -151,7 +155,7 @@
 }
 
 .topbar-container{
-  width: 180px;
+  width: 110%;
   margin-top: 2%;
   margin-left: 2%;
 }
@@ -293,4 +297,15 @@
 .eventDate {
   color: #B5AAAA;
   margin-top: -5px;
+}
+
+
+
+.logout-txt {
+  color: red;
+  margin-top: 7%;
+  float: right;
+  right: 0;
+  font-size: 20px;
+  margin-left: 10%;
 }
