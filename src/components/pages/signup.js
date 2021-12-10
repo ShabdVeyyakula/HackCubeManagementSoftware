@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../../Login.css';
 
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 
 import { Navigate } from "react-router-dom";
 
@@ -13,6 +13,7 @@ export default class Signup extends Component {
     this.state = {
         usernameSignup: "",
         passwordSignup: "",
+        name: "",
         texts: [],
         errorMessageLogin: "",
         redirect: null,
@@ -20,6 +21,8 @@ export default class Signup extends Component {
 
     this.handleChangeSignupUsername = this.handleChangeSignupUsername.bind(this);
     this.handleChangeSignupPassword = this.handleChangeSignupPassword.bind(this);
+    this.handleChangeSignupName = this.handleChangeSignupName.bind(this);
+
 
     this.createFirebaseUser = this.createFirebaseUser.bind(this);
 
@@ -30,11 +33,13 @@ export default class Signup extends Component {
 
     handleChangeSignupUsername(event) { this.setState({usernameSignup: event.target.value})}
     handleChangeSignupPassword(event) { this.setState({passwordSignup: event.target.value})}
+    handleChangeSignupName(event) { this.setState({name: event.target.value})}
+
 
 
   createFirebaseUser(){
 
-    if(this.state.usernameSignup != "" && this.state.passwordSignup != ""){
+    if(this.state.usernameSignup != "" && this.state.passwordSignup != "" && this.state.name != ""){
       const auth = getAuth();
       createUserWithEmailAndPassword(auth, this.state.usernameSignup, this.state.passwordSignup)
         .then((userCredential) => {
@@ -42,8 +47,24 @@ export default class Signup extends Component {
           const user = userCredential.user;
           console.log(user)
 
-          this.state.errorMessageLogin = ""
-          this.setState({redirect: "/login"})
+
+
+
+          const auth = getAuth();
+
+            updateProfile(auth.currentUser, {
+                displayName: this.state.name,
+            }).then(() => {
+                // Profile updated!
+                this.state.errorMessageLogin = ""
+                this.setState({redirect: "/login"})
+                // ...
+            }).catch((error) => {
+                // An error occurred
+                this.state.errorMessageLogin = error.message
+                // ...
+            });
+
           // ...
         })
         .catch((error) => {
@@ -81,13 +102,18 @@ export default class Signup extends Component {
 					</span>
 
 					<div class="wrap-input100 validate-input m-t-85 m-b-35 spaceButton" data-validate = "Enter username">
-						<input class="input100" type="text" placeholder="username" value = {this.state.usernameLogin} onChange = {this.handleChangeLoginUsername}/>
+						<input class="input100" type="text" placeholder="Username" value = {this.state.usernameSignup} onChange = {this.handleChangeSignupUsername}/>
 						<span class="focus-input100" data-placeholder="Username"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-50 spaceButton" data-validate="Enter password">
-						<input class="input100" type="password" name="pass" placeholder = "password" value = {this.state.passwordLogin} onChange = {this.handleChangeLoginPassword}/>
+						<input class="input100" type="password" name="pass" placeholder = "Password" value = {this.state.passwordSignup} onChange = {this.handleChangeSignupPassword}/>
 						<span class="focus-input100" data-placeholder="Password" ></span>
+					</div>
+
+                    <div class="wrap-input100 validate-input m-b-50 spaceButton" data-validate="Enter Name">
+						<input class="input100" type="text" name="pass" placeholder = "Name" value = {this.state.name} onChange = {this.handleChangeSignupName}/>
+						<span class="focus-input100" data-placeholder="Name" ></span>
 					</div>
 
                     <div>
@@ -95,19 +121,19 @@ export default class Signup extends Component {
                     </div>
 
 					<div class="container-login100-form-btn spaceButton">
-						<button type="button" class="login100-form-btn" onClick= {this.login}>
-							Login
+						<button type="button" class="login100-form-btn" onClick= {this.createFirebaseUser}>
+							Signup
 						</button>
 					</div>
 
 					<ul class="login-more p-t-190 spaceButton">
 						<li>
 							<span class="txt1">
-								Don’t have an account?
+								Already have an account?
 							</span>
 
-							<a href="/signup" class="txt2 spaceWidth">
-								Sign up
+							<a href="/login" class="txt2 spaceWidth">
+								Login
 							</a>
 						</li>
 					</ul>
