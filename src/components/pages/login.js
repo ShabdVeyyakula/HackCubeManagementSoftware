@@ -3,8 +3,7 @@ import '../../Login.css';
 import firebase from '../../firebase/init';
 
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import { useNavigate  } from 'react-router-dom';
-
+import { Navigate } from "react-router-dom";
 
 export default class Login extends Component {
     
@@ -18,7 +17,7 @@ export default class Login extends Component {
         passwordSignup: "",
         texts: [],
         errorMessageLogin: "",
-        redirect: false
+        redirect: null,
     };
 
     this.handleChangeLoginUsername = this.handleChangeLoginUsername.bind(this);
@@ -79,24 +78,29 @@ export default class Login extends Component {
         console.log("LOGIN SUCCESS")
         console.log(user)
         this.state.errorMessageLogin = ""
-        this.setState({})
+        this.setState({redirect: "/dashboard"})
 
-        //this.setRedirect()
-        let navigate = useNavigate();
-
-        navigate("login")
         // ...
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(error)
-        this.state.errorMessageLogin = errorMessage
+
+        if(errorMessage == "Firebase: Error (auth/wrong-password)."){
+            this.state.errorMessageLogin = "Incorrect Credentials"
+        } else {
+            this.state.errorMessageLogin = errorMessage
+        }
         this.setState({})
       });
 }
 
     render() {
+        if (this.state.redirect) {
+            return <Navigate  to={this.state.redirect} />
+          }
+
         return (
             <div>
 <div class="limiter">
