@@ -1,5 +1,6 @@
 {
   "name": "hackcube",
+  "homepage": "http://hackcube.io",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
