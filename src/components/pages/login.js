@@ -3,8 +3,11 @@ import '../../Login.css';
 import firebase from '../../firebase/init';
 
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate  } from 'react-router-dom';
+
 
 export default class Login extends Component {
+    
 
    constructor(props) {
     super(props);     
@@ -13,7 +16,9 @@ export default class Login extends Component {
         passwordLogin: "",
         usernameSignup: "",
         passwordSignup: "",
-        texts: []
+        texts: [],
+        errorMessageLogin: "",
+        redirect: false
     };
 
     this.handleChangeLoginUsername = this.handleChangeLoginUsername.bind(this);
@@ -27,6 +32,7 @@ export default class Login extends Component {
 
 
 }
+
 
 
   handleChangeLoginUsername(event) { event.preventDefault(); this.setState({usernameLogin: event.target.value})  }
@@ -72,19 +78,27 @@ export default class Login extends Component {
         const user = userCredential.user;
         console.log("LOGIN SUCCESS")
         console.log(user)
+        this.state.errorMessageLogin = ""
+        this.setState({})
+
+        //this.setRedirect()
+        let navigate = useNavigate();
+
+        navigate("login")
         // ...
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(error)
+        this.state.errorMessageLogin = errorMessage
+        this.setState({})
       });
 }
 
     render() {
         return (
             <div>
-
 <div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-85 p-b-20">
@@ -103,8 +117,12 @@ export default class Login extends Component {
 						<span class="focus-input100" data-placeholder="Password" ></span>
 					</div>
 
+                    <div>
+                        <p className = "redText">{this.state.errorMessageLogin}</p>
+                    </div>
+
 					<div class="container-login100-form-btn spaceButton">
-						<button class="login100-form-btn" onClick= {this.login}>
+						<button type="button" class="login100-form-btn" onClick= {this.login}>
 							Login
 						</button>
 					</div>
