@@ -6,40 +6,44 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Topbar from '../navbars/Topbar';
 import Event from '../reusable/Event'
 import Chat from '../reusable/Chat'
-import { doc, onSnapshot, collection, query, where, getDoc} from "firebase/firestore";
-import db from '../../firebase/init';
+import { getAuth } from "firebase/auth";
 
-
-async function test(){
-
-    const q = query(collection(db.db, "Clubs/0001/Chats"));
-    const unsubscribe = onSnapshot(q, (querySnapshot) => {
-    const cities = [];
-    querySnapshot.forEach((doc) => {
-        try{
-            cities.push(doc.data());
-        } catch (e){
-            console.log("error with pushing")
-        }
-        
-    });
-    console.log("Current cities in CA: ", cities);
-    });
-
-
-    /*
-    const q = query(collection(db, "buddies"))
-    const unsub = onSnapshot(q, (querySnapshot) => {
-      console.log("Data", querySnapshot.docs.map(d => doc.data()));
-    });
-    */
-
-
-    console.log("hello1111")
-}
 
 
 export class dashboard extends Component {
+
+    constructor(props) {
+        super(props);     
+        this.state = {
+            name: "",
+        }
+    }
+    
+
+    getUser(){
+        const auth = getAuth();
+        const user = auth.currentUser;
+        if (user !== null) {
+            // The user object has basic properties such as display name, email, etc.
+            const displayName = user.displayName;
+            const email = user.email;
+            const photoURL = user.photoURL;
+            const emailVerified = user.emailVerified;
+
+            // The user's ID, unique to the Firebase project. Do NOT use
+            // this value to authenticate with your backend server, if
+            // you have one. Use User.getToken() instead.
+            const uid = user.uid;
+            this.state.name = displayName;
+            this.setState({})
+        }
+
+    }
+
+    componentDidMount() {
+        // your source code to load initial data
+        this.getUser();
+    }
 
 
 
@@ -75,16 +79,16 @@ export class dashboard extends Component {
 
                                 <div className="row">
                                     <div className = "col">
-                                        <Chat/>
+                                        <Chat nameGiven = {this.props.name}/>
                                     </div>
 
                                     <div className = "col">
-                                        <Event/>
+                                        <Event />
                                     </div>
                             
                                 </div>
                     </div>
-                    <Rightbar />
+                    <Rightbar name = {this.state.name}/>
                 </div> 
             </div>
         )
