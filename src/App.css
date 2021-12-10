@@ -174,7 +174,6 @@ body {
   margin-top: 100px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
     border-radius: 10px;
-  padding-top: 9px;
 
 }
 
@@ -233,6 +232,14 @@ body {
   margin-left: 30px;
   margin-top: 20px;
   float: right;
+
+}
+
+.chatBoxContentSpacedLeft{
+  margin-left: 30px;
+  margin-top: 20px;
+  float: left;
+  width: 100%;
 }
 
 .chatContentDashboardMessage{
@@ -264,14 +271,8 @@ body {
   width: 234px;
   height: 55px;
   margin-top: 180px;
+
   background-color: #f7f7f7;
-  border-radius: 10px;
-
-}
-
-.inperson {
-  height: 50px;
-  width: 50px;
   border-radius: 10px;
   background-color: #0972D2;
   padding-top: 10px;
