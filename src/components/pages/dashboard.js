@@ -38,6 +38,7 @@ async function test(){
     console.log("hello1111")
 }
 
+
 export class dashboard extends Component {
 
 
@@ -89,6 +90,6 @@ export class dashboard extends Component {
         )
     }
 }
-test();
+
 
 export default dashboard;

@@ -4,6 +4,7 @@ import Leftbar from  '../navbars/Leftbar'
 import Rightbar from '../navbars/rightbar'
 import 'bootstrap/dist/css/bootstrap.css';
 import Topbar from '../navbars/Topbar';
+import Galleryitem from '../reusable/Galleryitem';
 
 export class gallery extends Component {
     render() {
@@ -13,6 +14,9 @@ export class gallery extends Component {
                     <Leftbar />
                     <div className = "centerSection">
                         <Topbar />
+                            <div className ="Row">
+                                <Galleryitem />
+                            </div>
 
 
 
