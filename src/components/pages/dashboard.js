@@ -48,6 +48,7 @@ export class dashboard extends Component {
 
 
     render() {
+
         return (
             <div className = "someBackground"> 
                 <div className = "pageLayout">
