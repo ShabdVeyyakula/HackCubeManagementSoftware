@@ -1,60 +1,68 @@
 import React, { Component } from 'react';
 import '../../Login.css';
 
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 import { Navigate } from "react-router-dom";
 
-export default class Login extends Component {
+export default class Signup extends Component {
     
 
    constructor(props) {
     super(props);     
     this.state = {
-        usernameLogin: '',
-        passwordLogin: "",
+        usernameSignup: "",
+        passwordSignup: "",
         texts: [],
         errorMessageLogin: "",
         redirect: null,
     };
 
-    this.handleChangeLoginUsername = this.handleChangeLoginUsername.bind(this);
-    this.handleChangeLoginPassword = this.handleChangeLoginPassword.bind(this);
+    this.handleChangeSignupUsername = this.handleChangeSignupUsername.bind(this);
+    this.handleChangeSignupPassword = this.handleChangeSignupPassword.bind(this);
 
-    this.login = this.login.bind(this);
+    this.createFirebaseUser = this.createFirebaseUser.bind(this);
+
 
 }
 
-    handleChangeLoginUsername(event)  { this.setState({usernameLogin: event.target.value}) }
-    handleChangeLoginPassword(event)  { this.setState({passwordLogin: event.target.value}) }
 
-  login(){
 
-    const auth = getAuth();
-    signInWithEmailAndPassword(auth, this.state.usernameLogin, this.state.passwordLogin)
-      .then((userCredential) => {
-        // Signed in 
-        const user = userCredential.user;
-        console.log("LOGIN SUCCESS")
-        console.log(user)
-        this.state.errorMessageLogin = ""
-        this.setState({redirect: "/dashboard"})
+    handleChangeSignupUsername(event) { this.setState({usernameSignup: event.target.value})}
+    handleChangeSignupPassword(event) { this.setState({passwordSignup: event.target.value})}
 
-        // ...
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(error)
 
-        if(errorMessage == "Firebase: Error (auth/wrong-password)."){
-            this.state.errorMessageLogin = "Incorrect Credentials"
-        } else {
-            this.state.errorMessageLogin = errorMessage
-        }
-        this.setState({})
-      });
-}
+  createFirebaseUser(){
+
+    if(this.state.usernameSignup != "" && this.state.passwordSignup != ""){
+      const auth = getAuth();
+      createUserWithEmailAndPassword(auth, this.state.usernameSignup, this.state.passwordSignup)
+        .then((userCredential) => {
+          // Signed in 
+          const user = userCredential.user;
+          console.log(user)
+
+          this.state.errorMessageLogin = ""
+          this.setState({redirect: "/login"})
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log(error)
+          this.state.errorMessageLogin = errorMessage
+          this.setState({})
+          // ..
+        });
+    } else {
+        this.state.errorMessageLogin = "Fields cannot be empty"
+          this.setState({})
+      console.log("Fields are empty")
+    }
+
+    
+  }
+
 
 
     render() {
@@ -69,7 +77,7 @@ export default class Login extends Component {
 			<div class="wrap-login100 p-t-85 p-b-20">
 				<div class="login100-form validate-form">
 					<span class="login100-form-title p-b-70">
-						Login
+						Signup
 					</span>
 
 					<div class="wrap-input100 validate-input m-t-85 m-b-35 spaceButton" data-validate = "Enter username">
