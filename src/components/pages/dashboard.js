@@ -18,13 +18,16 @@ import db from '../../firebase/init';
 export class dashboard extends Component {
 
     async getEvents() {
-        const q = query(collection(db.db, "Clubs/0001/Events"), orderBy("timestamp", "asc"));
+        const q = query(collection(db.db, "Clubs/0001/Events"));
         const unsubscribe = onSnapshot(q, (querySnapshot) => {
             var items = [];
             querySnapshot.forEach((doc) => {
                 try{
                     var data = doc.data();
-                    console.log(data)
+                    console.log(data);
+                    
+
+                    items.push(<Event eventName={data.name} eventDate = {data.date} />);
 
                     
 
@@ -33,7 +36,8 @@ export class dashboard extends Component {
                 }
                 
             });
-
+                this.eventsList = items;
+                this.setState({});
 
             //Chat.setState({update: 'Hello'});
             });
@@ -41,14 +45,13 @@ export class dashboard extends Component {
             console.log("did it work??")
     }
 
-    componentDidMount() {
-        this.getEvents()
-    }
+    
 
     constructor(props) {
         super(props);     
         this.state = {
             name: "",
+            eventsList: [],
         }
     }
     
@@ -76,6 +79,7 @@ export class dashboard extends Component {
     componentDidMount() {
         // your source code to load initial data
         this.getUser();
+        this.getEvents();
     }
 
 
@@ -119,12 +123,7 @@ export class dashboard extends Component {
                                     <div className = "col">
                                         <h1 className='eventsSec'>Events</h1>
                                         <div className='eventBigBox'>
-                                            <Event type = "online"/>
-                                            <Event type = "inperson"/>
-                                            <Event type = "inperson"/>
-                                            <Event type = "inperson"/>
-                                            <Event type = "inperson"/>
-                                            <Event type = "inperson"/>
+                                            {this.eventsList}
                                         </div>
 
                                     </div>
