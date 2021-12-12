@@ -9,7 +9,7 @@ export class galleryitem extends Component {
     render() {
         return (
             <div>
-                <div className = "galleryitem">
+                <div className = "galleryitem" style = {{backgroundImage: `url(${this.props.img})`}}>
                     <div className = "itemname">
                         <p className = "projectname">{this.props.name}</p>
                     </div>

@@ -29,7 +29,8 @@ export class gallery extends Component {
                     console.log(data)
 
                     if(data.name != "" && data.picture_url != ""){
-                        items.push(<div className = "col-md-3"><Galleryitem name = {data.name}/></div>);
+                        items.push(<div className = "col-md-3"><Galleryitem name = {data.name} img = {data.project_url}/></div>);
+                        
                     }
                 } catch (e){
                     console.log("error with pushing")
