@@ -267,8 +267,8 @@ html {
 .galleryitem{
   width: 234px;
   height: 234px;
-  margin-top: 125px;
-  margin-left: 20px;
+  margin-top: 40px;
+  margin-left: 3rem;
   /*
   background-image: url("https://images.squarespace-cdn.com/content/v1/5943b11db3db2be040e6fa54/1526228388073-OV5CW9SOJULLH9F8ZLXM/Image-coding.jpg?format=1500w");
   */
@@ -276,6 +276,14 @@ html {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
   font-weight: bold;
   color: black;
+}
+
+.projectGalleryTitle{
+  font-size: 45px;
+  font-weight: bold;
+  font-family: 'Poppins';
+  padding-left: 3rem;
+  Padding-top: 3rem;
 }
 
 

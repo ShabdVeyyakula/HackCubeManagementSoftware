@@ -74,6 +74,7 @@ export class gallery extends Component {
                     <Leftbar />
                     <div className = "centerSection">
                         <Topbar />
+                        <h1 className = "projectGalleryTitle">Project Gallery</h1>
                             <div className ="row">
                                 {this.state.projects}
                             </div>
