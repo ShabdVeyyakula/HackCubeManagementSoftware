@@ -20,7 +20,7 @@ export class gallery extends Component {
     }
 
     async getProjects(){
-            const q = query(collection(db.db, "Clubs/0001/Projects"), orderBy("timestamp", "desc"));
+            const q = query(collection(db.db, "Clubs/0001/Project Gallery"));
             const unsubscribe = onSnapshot(q, (querySnapshot) => {
             var items = [];
             querySnapshot.forEach((doc) => {
@@ -29,13 +29,15 @@ export class gallery extends Component {
                     console.log(data)
 
                     if(data.name != "" && data.picture_url != ""){
-                        items.push(<div className = "col-md-3"><Galleryitem name = {data.name}/></div>);
+                        items.push(<div className = "col-md-3"><Galleryitem name = {data.name} img = {data.project_pic}/></div>);
+
                     }
                 } catch (e){
                     console.log("error with pushing")
                 }
             });
-            this.setState({projects: items})
+            this.state.projects = items
+            this.setState({})
         });
     }
     
@@ -72,6 +74,10 @@ export class gallery extends Component {
                     <Leftbar />
                     <div className = "centerSection">
                         <Topbar />
+                        <div className = "rowFlex">
+                            <h1 className = "projectGalleryTitle">Project Gallery</h1>
+                            <span></span>
+                        </div>
                             <div className ="row">
                                 {this.state.projects}
                             </div>
