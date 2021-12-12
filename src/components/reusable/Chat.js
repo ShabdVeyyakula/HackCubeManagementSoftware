@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
 import ChatContentDashboardLeft from './ChatContentDashboardLeft'
 import ChatContentDashboardRight from './ChatContentDashboardRight'
-import ScrollToBottom from 'react-scroll-to-bottom';
 import { getAuth } from "firebase/auth";
 
 import '../../App.css'
@@ -135,25 +134,27 @@ class Chat extends Component {
             this.texts = items;
             console.log("Current cities in CA: ", cities);
             this.setState({texts: cities})
-            //document.getElementById('textsBoxScroll').current.scrollIntoView({ behavior: "smooth" })
+            this.scrollToBottom();
+
 
             //Chat.setState({update: 'Hello'});
             });
 
         }
-
-
-
-
-        /*
-        const q = query(collection(db, "buddies"))
-        const unsub = onSnapshot(q, (querySnapshot) => {
-          console.log("Data", querySnapshot.docs.map(d => doc.data()));
-        });
-        */
     
         console.log("hello1111")
     }
+
+    scrollToBottom = () => {
+        try{
+            var objDiv = document.getElementById("messagesList");
+            objDiv.scrollTop = objDiv.scrollHeight;
+        } catch(e){
+            console.log("ERROR")
+        }
+
+      }
+      
 
     componentDidMount() {
         // your source code to load initial data
@@ -207,7 +208,7 @@ class Chat extends Component {
 
                     <div className = "chatBoxtitle">Chat</div>
 
-                    <div className = "chatBoxContent" id = "textsBoxScroll">
+                    <div className = "chatBoxContent" id = "messagesList">
                         {this.texts}
                     
                         <ChatContentDashboardLeft/>
