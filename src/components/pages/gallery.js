@@ -21,6 +21,8 @@ export class gallery extends Component {
             projects: [],
             showModal: false
         }
+        this.showPopup = this.showPopup.bind(this);
+
     }
 
     async getProjects(){
@@ -72,6 +74,7 @@ export class gallery extends Component {
     }
 
     showPopup(){
+        console.log('/////////////////////////////////')
         this.setState({showModal: true})
 
     }
@@ -83,20 +86,31 @@ export class gallery extends Component {
     render() {
         return (
             <div>
-                <Modal show={this.state.showModal} onHide={this.handleClose}>
-                    <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
+
+              <Modal show={this.state.showModal} style={{opacity:1}}>
+                        <Modal.Header closeButton>
+                    <Modal.Title id = "modalHeader">Create Project</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                    <Modal.Body id = "modalBody">
+                        <p id = "modalSubhead">
+                            List a project that you made below!
+                        </p>
+
+                        <input placeholder = "Project Name" className = "createProjectModalInput"/>
+                        <input placeholder = "Project Image URL" className = "createProjectModalInput"/>
+
+
+                    </Modal.Body>
+
                     <Modal.Footer>
-                    <Button variant="secondary" onClick={this.shandleClose}>
+                    <Button variant="secondary" onClick={() => this.handleClose()}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={this.handleClose}>
+                    <Button variant="primary" onClick={() => this.handleClose()}>
                         Save Changes
                     </Button>
                     </Modal.Footer>
-              </Modal>
+            </Modal>
 
                 <div className = "pageLayout">
                     <Leftbar />
@@ -104,7 +118,7 @@ export class gallery extends Component {
                         <Topbar />
                         <div className = "rowFlex">
                             <h1 className = "projectGalleryTitle">Project Gallery</h1>
-                            <span className = "plusIconGalleryClick" onClick = {console.log()}>
+                            <span className = "plusIconGalleryClick" onClick = {() => this.showPopup()}>
                                 <img src = {Plus} className = "plusIconGallery"/>
                             </span>
                         </div>
