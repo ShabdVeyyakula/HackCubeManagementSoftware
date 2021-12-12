@@ -263,15 +263,16 @@ html {
 }
 
 .galleryitem{
-  position: absolute;
   width: 234px;
   height: 234px;
   margin-top: 125px;
-  margin-left: 100px;
+  margin-left: 20px;
 
-  background-color: #868A73;
+  background-image: url("https://images.squarespace-cdn.com/content/v1/5943b11db3db2be040e6fa54/1526228388073-OV5CW9SOJULLH9F8ZLXM/Image-coding.jpg?format=1500w");
   border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
 }
+
 
 .itemname{
   position: absolute;
@@ -281,8 +282,14 @@ html {
 
   background-color: #f7f7f7;
   border-radius: 10px;
-  background-color: #0972D2;
+  background-color: white;
   padding-top: 10px;
+}
+
+.projectname{
+  margin-left: 15px;
+  margin-top: 3px;
+  font-size: 17px;
 }
 
 .map-icon { 
