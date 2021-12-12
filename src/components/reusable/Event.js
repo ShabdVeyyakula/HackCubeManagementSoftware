@@ -31,8 +31,8 @@ export class Event extends Component {
 
     render() {
         return (
-            <div className='container'>
-                <div className="eventBox row no-gutters">
+            <div className='container eventBoxContainer'>
+                <div className="eventBox row">
                   
 
                     <div className='col-2'>  {this.state.widget}</div>

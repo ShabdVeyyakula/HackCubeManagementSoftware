@@ -84,8 +84,15 @@ export class dashboard extends Component {
                                     </div>
 
                                     <div className = "col">
-                                        <Event type = "online"/>
-                                        <Event type = "inperson"/>
+                                        <h1 className='eventsSec'>Events</h1>
+                                        <div className='eventBigBox'>
+                                            <Event type = "online"/>
+                                            <Event type = "inperson"/>
+                                            <Event type = "inperson"/>
+                                            <Event type = "inperson"/>
+                                            <Event type = "inperson"/>
+                                            <Event type = "inperson"/>
+                                        </div>
 
                                     </div>
 

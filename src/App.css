@@ -170,14 +170,16 @@ html {
   height: 70px;
   width:400px;
   background-color: white;
-  margin-left: 150px;
-  margin-top: 100px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
-    border-radius: 10px;
-    padding-top: 9px;
-    padding-left: 4px;
-  margin-top: 15px;
+  border-radius: 10px;
+  padding-top: 9px;
+  padding-left: 4px;
+  margin-top: 20px;
 
+}
+
+.eventBoxContainer {
+  margin-top: 10px;
 }
 
 
@@ -341,4 +343,23 @@ html {
   background-color: #EFBA30;
   border-radius: 10px;
   padding-top: 7px;
+}
+
+.eventsSec {
+  font-weight: bold;
+  margin-top: 90px;
+  margin-left: 70px;
+  
+
+}
+
+.eventBigBox {
+  max-height: 45rem;
+  width:450px;
+  margin-left: 70px;
+  overflow:auto;
+  -ms-overflow-style: none;  /* IE and Edge /
+  scrollbar-width: none;  / Firefox */
+
+
 }
