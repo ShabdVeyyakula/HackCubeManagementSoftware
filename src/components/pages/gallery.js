@@ -8,6 +8,9 @@ import Galleryitem from '../reusable/Galleryitem';
 import { getAuth } from "firebase/auth";
 import { doc, onSnapshot, collection, query, where, getDoc, addDoc, orderBy} from "firebase/firestore";
 import db from '../../firebase/init';
+import Plus from '../navbars/icons/plus.svg'
+import { Modal } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 
 export class gallery extends Component {
 
@@ -15,7 +18,8 @@ export class gallery extends Component {
         super(props);     
         this.state = {
             name: "",
-            projects: []
+            projects: [],
+            showModal: false
         }
     }
 
@@ -67,16 +71,42 @@ export class gallery extends Component {
         this.getProjects();
     }
 
+    showPopup(){
+        this.setState({showModal: true})
+
+    }
+
+    handleClose(){
+        this.setState({showModal: false})
+    }
+
     render() {
         return (
             <div>
+                <Modal show={this.state.showModal} onHide={this.handleClose}>
+                    <Modal.Header closeButton>
+                    <Modal.Title>Modal heading</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                    <Modal.Footer>
+                    <Button variant="secondary" onClick={this.shandleClose}>
+                        Close
+                    </Button>
+                    <Button variant="primary" onClick={this.handleClose}>
+                        Save Changes
+                    </Button>
+                    </Modal.Footer>
+              </Modal>
+
                 <div className = "pageLayout">
                     <Leftbar />
                     <div className = "centerSection">
                         <Topbar />
                         <div className = "rowFlex">
                             <h1 className = "projectGalleryTitle">Project Gallery</h1>
-                            <span></span>
+                            <span className = "plusIconGalleryClick" onClick = {console.log()}>
+                                <img src = {Plus} className = "plusIconGallery"/>
+                            </span>
                         </div>
                             <div className ="row">
                                 {this.state.projects}
