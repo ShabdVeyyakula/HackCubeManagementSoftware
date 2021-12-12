@@ -300,6 +300,32 @@ html {
   Padding-top: 3rem;
 }
 
+#modalHeader{
+  font-size: 30px;
+  font-family: 'Poppins';
+  font-weight: bold;
+}
+
+#modalSubhead{
+  font-size: 15px;
+  font-family: 'Poppins';
+}
+
+.createProjectModalInput{
+  font-size: 20px;
+  font-family: "Poppins";
+  height: 40px;
+  width: inherit;
+  border: 1px solid grey;
+  border-radius: 10px;
+  margin-top: 30px;
+  padding-left: 10px;
+  margin-right: 20px;
+}
+
+#modalBody{
+  width: inherit;
+}
 
 .itemname{
   position: absolute;
