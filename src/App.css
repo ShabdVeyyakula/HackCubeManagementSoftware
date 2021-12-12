@@ -88,7 +88,7 @@ html {
   background-color: rgb(255, 255, 255);
   left:0;
   position: fixed;
-  padding-left: 25px;
+  padding-left: 30px;
   padding-top: 50px;
   top: 0px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
@@ -96,9 +96,19 @@ html {
 }
 
 .leftBarIcon {
-  width: 40px;
+  width: 35px;
   margin-left: 10px;
   margin-top: 33px
+}
+
+.leftBarIconPressed {
+  width: 35px;
+  margin-left: 10px;
+  margin-top: 33px;
+  filter: invert(74%) sepia(7%) saturate(687%) hue-rotate(314deg) brightness(98%) contrast(81%);
+
+
+
 }
 
 .box-stats-dashboard{

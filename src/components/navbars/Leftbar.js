@@ -7,9 +7,39 @@ import Pin from '../../components/navbars/icons/tabler-icon-pin.svg'
 import Box from '../../components/navbars/icons/tabler-icon-box.svg'
 
 
+import {
+    BrowserRouter as Router,
+    Link,
+    
+  } from 'react-router-dom'
+
+
+
 
 
 export class leftbar extends Component {
+
+
+
+   
+
+    dashboardPressed() {
+        
+    }
+
+    calendarPressed() {
+
+    }
+
+    messagesPressed() {
+
+    }
+
+    galleryPressed() {
+
+    }
+
+
     render() {
         return (
             <div>
@@ -19,10 +49,29 @@ export class leftbar extends Component {
                         <hr/>
                     </div>
                     
-                    <img src = {Box} className = "leftBarIcon" />
-                    <img src = {Calendar} className = "leftBarIcon" />
-                    <img src = {Message} className = "leftBarIcon" />
-                    <img src = {Pin} className = "leftBarIcon" />
+                    <Link Link to='/dashboard'>
+                        <img src = {Box} className = "leftBarIcon"/>
+                    </Link>
+
+                    <Link Link to ='/calendar'>
+                        <img src = {Calendar} className = "leftBarIcon" />
+
+                    </Link>
+
+
+                    <Link Link to ='/messages'>
+                        <img src = {Message} className = "leftBarIcon" />
+
+                    </Link>
+
+                    <Link Link to = '/gallery'>
+                        <img src = {Pin} className = "leftBarIcon" />
+
+
+                    </Link>
+
+
+
                 </div>
             </div>
         )

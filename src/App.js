@@ -15,6 +15,7 @@ import Schedule from "./components/pages/schedule";
 import Gallery from "./components/pages/gallery";
 import Login from "./components/pages/login";
 import Signup from "./components/pages/signup";
+import Calendar from "./components/pages/calendar";
 
 
 //import Rightbar from './components/navbars/rightbar';
@@ -48,6 +49,9 @@ export default function App() {
           <Route path='/login' element={<Login/>} />
 
           <Route path='/signup' element={<Signup/>} />
+
+          <Route path='/calendar' element={<Calendar/>} />
+
 
 
 
