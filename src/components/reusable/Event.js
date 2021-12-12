@@ -37,8 +37,8 @@ export class Event extends Component {
 
                     <div className='col-2'>  {this.state.widget}</div>
                     <div className ="col-5">
-                        <b><p className = "eventName">Merced Hacks 2020</p></b>
-                        <p className='eventDate'>December 12th</p>
+                        <b><p className = "eventName">{this.props.eventName}</p></b>
+                        <p className='eventDate'>{this.props.eventDate}</p>
                     </div>
                 </div>
             </div>
