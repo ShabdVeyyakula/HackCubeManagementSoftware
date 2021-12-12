@@ -9,67 +9,6 @@ import '../../App.css'
 import { doc, onSnapshot, collection, query, where, getDoc, addDoc, orderBy} from "firebase/firestore";
 import db from '../../firebase/init';
 
-
-/*
-
-async function test(){
-
-    const q = query(collection(db.db, "Clubs/0001/Chats"));
-    const unsubscribe = onSnapshot(q, (querySnapshot) => {
-    const cities = [];
-    querySnapshot.forEach((doc) => {
-        try{
-            cities.push(doc.data());
-            var data = doc.data();
-
-            items.push(<ChatContentDashboardRight  name={data.from} text = {data.text} />);
-        } catch (e){
-            console.log("error with pushing")
-        }
-        
-    });
-
-    texts = cities;
-    console.log("Current cities in CA: ", cities);
-    //Chat.setState({update: 'Hello'});
-    });
-
-
-    
-    const q = query(collection(db, "buddies"))
-    const unsub = onSnapshot(q, (querySnapshot) => {
-      console.log("Data", querySnapshot.docs.map(d => doc.data()));
-    });
-    
-
-
-    console.log("hello1111")
-}
-
-async function sendText(){
-    var textInput = textSend
-
-    //this.stateState({})
-
-
-    console.log(textSend)
-
-    if(textInput != ""){
-        await addDoc(collection(db.db, "Clubs/0001/Chats"), {
-            from: "Shabd Veyyakula",
-            text: textInput,
-            timestamp: Math.floor(Date.now() / 1000).toString()
-          });
-
-          textInput = ""
-    }
-
-
-
-}
-
-*/
-
 class Chat extends Component {
     
 
@@ -110,19 +49,17 @@ class Chat extends Component {
             
             const q = query(collection(db.db, "Clubs/0001/Chats"), orderBy("timestamp", "asc"));
             const unsubscribe = onSnapshot(q, (querySnapshot) => {
-            const cities = [];
             var items = [];
             querySnapshot.forEach((doc) => {
                 try{
-                    cities.push(doc.data());
                     var data = doc.data();
-                    
-                    console.log(data.from)
-                    console.log(this.state.name)
-                    if(data.from == this.state.name){
-                        items.push(<ChatContentDashboardRight  name={data.from} text = {data.text} />);
-                    } else {
-                        items.push(<ChatContentDashboardLeft  name={data.from} text = {data.text} />);
+
+                    if(data.from != "" && data.text != ""){
+                        if(data.from == this.state.name){
+                            items.push(<ChatContentDashboardRight  name={data.from} text = {data.text} />);
+                        } else {
+                            items.push(<ChatContentDashboardLeft  name={data.from} text = {data.text} />);
+                        }
                     }
 
                 } catch (e){
@@ -132,8 +69,7 @@ class Chat extends Component {
             });
 
             this.texts = items;
-            console.log("Current cities in CA: ", cities);
-            this.setState({texts: cities})
+            this.setState({texts: items})
             this.scrollToBottom();
 
 
@@ -161,13 +97,10 @@ class Chat extends Component {
         this.getTexts();
     }
 
-    
 
 
     async sendText(){
-    
         //this.stateState({})
-    
         console.log(this.state.textInput)
 
         const auth = getAuth();
@@ -195,9 +128,6 @@ class Chat extends Component {
                   this.setState({textInput: ""})
             }
         }
-
-    
-
     }
     
     
@@ -205,14 +135,9 @@ class Chat extends Component {
         return (
             <div>
                 <div className="chatBox">
-
                     <div className = "chatBoxtitle">Chat</div>
-
                     <div className = "chatBoxContent" id = "messagesList">
                         {this.texts}
-                    
-                        <ChatContentDashboardLeft/>
-                        
                     </div>
 
                     <div class="d-flex justify-content-center">
@@ -222,11 +147,6 @@ class Chat extends Component {
 
                         </div>
                     </div>
-                    
-                   
-                    
-                    
-                    
                 </div>
             </div>
         )
