@@ -281,6 +281,17 @@ html {
   background-position: center;
 }
 
+.plusIconGallery{
+  margin-top: 35px;
+  margin-left: 10px;
+  width: 50px;
+  filter: invert(17%) sepia(97%) saturate(5734%) hue-rotate(266deg) brightness(103%) contrast(101%);
+}
+
+.plusIconGalleryClick{
+  cursor: pointer;
+}
+
 .projectGalleryTitle{
   font-size: 45px;
   font-weight: bold;
