@@ -25,9 +25,17 @@ export class dashboard extends Component {
                 try{
                     var data = doc.data();
                     console.log(data);
+
+                    if (data.type == "online") {
+                        items.push(<Event eventName={data.name} eventDate = {data.date} type="online" />);
+
+
+                    } else {
+                        items.push(<Event eventName={data.name} eventDate = {data.date} type="inperson" />);
+
+                    }
                     
 
-                    items.push(<Event eventName={data.name} eventDate = {data.date} />);
 
                     
 

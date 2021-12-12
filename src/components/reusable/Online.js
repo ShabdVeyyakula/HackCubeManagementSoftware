@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../../App.css'
-import Icon from '../navbars/icons/tabler-icon-map-pin.svg'
+import Icon from '../navbars/icons/laptop.svg'
 
 export class Online extends Component {
     render() {
