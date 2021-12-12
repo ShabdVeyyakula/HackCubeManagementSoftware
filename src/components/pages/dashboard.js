@@ -8,9 +8,42 @@ import Event from '../reusable/Event'
 import Chat from '../reusable/Chat'
 import { getAuth } from "firebase/auth";
 
+import { doc, onSnapshot, collection, query, where, getDoc, addDoc, orderBy} from "firebase/firestore";
+import db from '../../firebase/init';
+
+
+
 
 
 export class dashboard extends Component {
+
+    async getEvents() {
+        const q = query(collection(db.db, "Clubs/0001/Events"), orderBy("timestamp", "asc"));
+        const unsubscribe = onSnapshot(q, (querySnapshot) => {
+            var items = [];
+            querySnapshot.forEach((doc) => {
+                try{
+                    var data = doc.data();
+                    console.log(data)
+
+                    
+
+                } catch (e){
+                    console.log("error with pushing")
+                }
+                
+            });
+
+
+            //Chat.setState({update: 'Hello'});
+            });
+
+            console.log("did it work??")
+    }
+
+    componentDidMount() {
+        this.getEvents()
+    }
 
     constructor(props) {
         super(props);     
