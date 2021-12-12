@@ -11,7 +11,7 @@ export class galleryitem extends Component {
             <div>
                 <div className = "galleryitem">
                     <div className = "itemname">
-                        <p className = "projectname">G-Alert</p>
+                        <p className = "projectname">{this.props.name}</p>
                     </div>
                 </div>
             </div>
