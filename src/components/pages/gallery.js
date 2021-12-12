@@ -20,7 +20,7 @@ export class gallery extends Component {
     }
 
     async getProjects(){
-            const q = query(collection(db.db, "Clubs/0001/Projects"), orderBy("timestamp", "desc"));
+            const q = query(collection(db.db, "Clubs/0001/Project Gallery"));
             const unsubscribe = onSnapshot(q, (querySnapshot) => {
             var items = [];
             querySnapshot.forEach((doc) => {
@@ -35,7 +35,8 @@ export class gallery extends Component {
                     console.log("error with pushing")
                 }
             });
-            this.setState({projects: items})
+            this.state.projects = items
+            this.setState({})
         });
     }
     
