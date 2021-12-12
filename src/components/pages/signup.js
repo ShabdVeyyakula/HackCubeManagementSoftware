@@ -102,8 +102,8 @@ export default class Signup extends Component {
 					</span>
 
 					<div class="wrap-input100 validate-input m-t-85 m-b-35 spaceButton" data-validate = "Enter username">
-						<input class="input100" type="text" placeholder="Username" value = {this.state.usernameSignup} onChange = {this.handleChangeSignupUsername}/>
-						<span class="focus-input100" data-placeholder="Username"></span>
+						<input class="input100" type="text" placeholder="Email" value = {this.state.usernameSignup} onChange = {this.handleChangeSignupUsername}/>
+						<span class="focus-input100" data-placeholder="Email"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-50 spaceButton" data-validate="Enter password">
@@ -112,8 +112,8 @@ export default class Signup extends Component {
 					</div>
 
                     <div class="wrap-input100 validate-input m-b-50 spaceButton" data-validate="Enter Name">
-						<input class="input100" type="text" name="pass" placeholder = "Name" value = {this.state.name} onChange = {this.handleChangeSignupName}/>
-						<span class="focus-input100" data-placeholder="Name" ></span>
+						<input class="input100" type="text" name="pass" placeholder = "Full Name" value = {this.state.name} onChange = {this.handleChangeSignupName}/>
+						<span class="focus-input100" data-placeholder="Full Name" ></span>
 					</div>
 
                     <div>

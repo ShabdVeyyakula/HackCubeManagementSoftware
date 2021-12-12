@@ -9,7 +9,7 @@ export class rightbar extends Component {
             <div>
                 <div className="rightBarBody">
                     <div className ="col">
-                        <h1 className = "name">Good afternoon, {this.props.name}</h1>
+                        <h1 className = "name">Welcome back, {this.props.name}</h1>
 
                         <div className="col">
                             <h1 className = "upcomming">10 days left until,<br/> Merced Hacks 2022</h1>

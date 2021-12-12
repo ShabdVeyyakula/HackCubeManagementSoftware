@@ -73,12 +73,12 @@ export default class Login extends Component {
 					</span>
 
 					<div class="wrap-input100 validate-input m-t-85 m-b-35 spaceButton" data-validate = "Enter username">
-						<input class="input100" type="text" placeholder="username" value = {this.state.usernameLogin} onChange = {this.handleChangeLoginUsername}/>
-						<span class="focus-input100" data-placeholder="Username"></span>
+						<input class="input100" type="text" placeholder="Email" value = {this.state.usernameLogin} onChange = {this.handleChangeLoginUsername}/>
+						<span class="focus-input100" data-placeholder="Email"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-50 spaceButton" data-validate="Enter password">
-						<input class="input100" type="password" name="pass" placeholder = "password" value = {this.state.passwordLogin} onChange = {this.handleChangeLoginPassword}/>
+						<input class="input100" type="password" name="pass" placeholder = "Password" value = {this.state.passwordLogin} onChange = {this.handleChangeLoginPassword}/>
 						<span class="focus-input100" data-placeholder="Password" ></span>
 					</div>
 
