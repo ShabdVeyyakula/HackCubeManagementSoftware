@@ -265,17 +265,20 @@ html {
 }
 
 .galleryitem{
-  width: 234px;
-  height: 234px;
-  margin-top: 40px;
+  width: 274px;
+  height: 274px;
+  margin-top: 30px;
   margin-left: 3rem;
   /*
   background-image: url("https://images.squarespace-cdn.com/content/v1/5943b11db3db2be040e6fa54/1526228388073-OV5CW9SOJULLH9F8ZLXM/Image-coding.jpg?format=1500w");
   */
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
   font-weight: bold;
   color: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .projectGalleryTitle{
@@ -289,12 +292,12 @@ html {
 
 .itemname{
   position: absolute;
-  width: 234px;
+  bottom: 0;
+  width: inherit;
   height: 55px;
   margin-top: 180px;
-
   background-color: #f7f7f7;
-  border-radius: 10px;
+  border-radius: 0px 0px 5px 5px;
   background-color: white;
   padding-top: 10px;
 }
