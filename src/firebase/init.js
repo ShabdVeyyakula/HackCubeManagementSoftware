@@ -1,7 +1,5 @@
 import { initializeApp } from 'firebase/app';  
-
-
-import { getFirestore, collection, query, where, onSnapshot} from 'firebase/firestore';
+import { getFirestore} from 'firebase/firestore';
 // Follow this pattern to import other Firebase services
 // import { } from 'firebase/<service>';
 
