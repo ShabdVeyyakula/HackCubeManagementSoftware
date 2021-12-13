@@ -6,7 +6,7 @@ import { getAuth } from "firebase/auth";
 
 import '../../App.css'
 
-import { doc, onSnapshot, collection, query, where, getDoc, addDoc, orderBy} from "firebase/firestore";
+import { onSnapshot, collection, query, addDoc, orderBy} from "firebase/firestore";
 import db from '../../firebase/init';
 
 class Chat extends Component {
@@ -35,14 +35,15 @@ class Chat extends Component {
             // The user object has basic properties such as display name, email, etc.
             const displayName = user.displayName;
             this.state.name =  displayName;
-            const email = user.email;
-            const photoURL = user.photoURL;
-            const emailVerified = user.emailVerified;
+            //const email = user.email;
+            //const photoURL = user.photoURL;
+            //const emailVerified = user.emailVerified;
 
             // The user's ID, unique to the Firebase project. Do NOT use
             // this value to authenticate with your backend server, if
             // you have one. Use User.getToken() instead.
-            const uid = user.uid;
+
+            //const uid = user.uid;
 
             this.setState({})
 
@@ -54,7 +55,7 @@ class Chat extends Component {
                 try{
                     var data = doc.data();
 
-                    if(data.from != "" && data.text != ""){
+                    if(data.from !== "" && data.text !== ""){
                         if(data.from == this.state.name){
                             items.push(<ChatContentDashboardRight  name={data.from} text = {data.text} />);
                         } else {
@@ -108,14 +109,14 @@ class Chat extends Component {
         if (user !== null) {
             // The user object has basic properties such as display name, email, etc.
             const displayName = user.displayName;
-            const email = user.email;
-            const photoURL = user.photoURL;
-            const emailVerified = user.emailVerified;
+            //const email = user.email;
+            //const photoURL = user.photoURL;
+            //const emailVerified = user.emailVerified;
 
             // The user's ID, unique to the Firebase project. Do NOT use
             // this value to authenticate with your backend server, if
             // you have one. Use User.getToken() instead.
-            const uid = user.uid;
+            //const uid = user.uid;
 
             if(this.state.textInput != ""){
                 await addDoc(collection(db.db, "Clubs/0001/Chats"), {

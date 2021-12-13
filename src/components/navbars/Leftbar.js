@@ -8,7 +8,6 @@ import Box from '../../components/navbars/icons/tabler-icon-box.svg'
 
 
 import {
-    BrowserRouter as Router,
     Link,
     
   } from 'react-router-dom'

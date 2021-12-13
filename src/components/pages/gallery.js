@@ -99,17 +99,15 @@ export class gallery extends Component {
                         <input placeholder = "Project Name" className = "createProjectModalInput"/>
                         <input placeholder = "Project Image URL" className = "createProjectModalInput"/>
 
-
                     </Modal.Body>
-
-                    <Modal.Footer>
-                    <Button variant="secondary" onClick={() => this.handleClose()}>
-                        Close
-                    </Button>
-                    <Button variant="primary" onClick={() => this.handleClose()}>
-                        Save Changes
-                    </Button>
-                    </Modal.Footer>
+                        <Modal.Footer>
+                        <Button variant="secondary" onClick={() => this.handleClose()}>
+                            Close
+                        </Button>
+                        <Button variant="primary" onClick={() => this.handleClose()}>
+                            Save Changes
+                        </Button>
+                        </Modal.Footer>
             </Modal>
 
                 <div className = "pageLayout">
