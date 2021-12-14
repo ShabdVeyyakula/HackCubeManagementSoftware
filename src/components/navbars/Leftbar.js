@@ -7,7 +7,7 @@ import Calendar from '../../components/navbars/icons/tabler-icon-calendar-event.
 import Message from '../../components/navbars/icons/tabler-icon-message.svg'
 import Pin from '../../components/navbars/icons/tabler-icon-pin.svg'
 import Box from '../../components/navbars/icons/tabler-icon-box.svg'
-
+import Person from '../../components/navbars/icons/person.svg'
 
 import {
     Link,
@@ -55,8 +55,10 @@ export class leftbar extends Component {
 
             <Link Link to = '/gallery'>
                 <img src = {Pin} className = "leftBarIcon" />
+            </Link>,
 
-
+            <Link Link to = '/about'>
+                <img src = {Person} className = "leftBarIcon" />
             </Link>
 
 
@@ -83,6 +85,10 @@ export class leftbar extends Component {
 
             <Link Link to = '/gallery'>
                 <img src = {Pin} className = "leftBarIcon" />
+            </Link>,
+
+            <Link Link to = '/about'>
+            <img src = {Person} className = "leftBarIcon" />
             </Link>
 
             ];
@@ -109,6 +115,10 @@ export class leftbar extends Component {
             <Link Link to = '/gallery'>
                 <img src = {Pin} className = "leftBarIcon" />
 
+            </Link>,
+
+            <Link Link to = '/about'>
+            <img src = {Person} className = "leftBarIcon" />
             </Link>
 
             ];
@@ -135,7 +145,40 @@ export class leftbar extends Component {
             <Link Link to = '/gallery'>
                 <img src = {Pin} className = "leftBarIcon selectedIcon" />
 
-            </Link>
+            </Link>,
+
+            <Link Link to = '/about'>
+            <img src = {Person} className = "leftBarIcon" />
+             </Link>
+
+            ];
+        }
+
+        if(this.props.page == "about"){
+
+            this.state.components = [ 
+                <Link Link to='/dashboard'>
+                <img src = {Box} className = "leftBarIcon"/>
+                </Link>,
+
+            <Link Link to ='/calendar'>
+                <img src = {Calendar} className = "leftBarIcon" />
+
+            </Link>,
+
+            <Link Link to ='/messages'>
+                <img src = {Message} className = "leftBarIcon" />
+
+            </Link>,
+
+            <Link Link to = '/gallery'>
+                <img src = {Pin} className = "leftBarIcon" />
+
+            </Link>,
+
+            <Link Link to = '/about'>
+                <img src = {Person} className = "leftBarIcon selectedIcon" />
+             </Link>
 
             ];
         }

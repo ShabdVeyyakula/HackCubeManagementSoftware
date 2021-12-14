@@ -24,9 +24,8 @@ export class Topbar extends Component {
         signOut(auth).then(() => {
           // Sign-out successful.
           console.log("Signed out")
-          this.setState({redirect: "/login"})
+          window.location = "/login"
 
-          console.log("REDIRECT: " + this.state.redirect)
         }).catch((error) => {
           // An error happened.
         });
