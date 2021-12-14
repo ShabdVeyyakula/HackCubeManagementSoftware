@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
+
 import '../../App.css'
 import Leftbar from  '../navbars/Leftbar'
 import Rightbar from '../navbars/rightbar'
 import 'bootstrap/dist/css/bootstrap.css';
 import Topbar from '../navbars/Topbar';
 import { getAuth } from "firebase/auth";
+import Eventcalendar from '../reusable/Eventcalendar';
+
 
 
 
@@ -12,6 +15,7 @@ import { getAuth } from "firebase/auth";
 
 export class calendar extends Component {
 
+   
     constructor(props) {
         super(props);     
         this.state = {
@@ -51,9 +55,9 @@ export class calendar extends Component {
                 <div className = "someBackground"> 
                 <div className = "pageLayout">
                     <Leftbar page = "calendar"/>
-                    <div className = "centerSection">
+                    <div className = "centerSection fghjk">
                         <Topbar />
-                            
+                        <Eventcalendar />
                     </div>
                     <Rightbar name = {this.state.name}/>
                 </div> 
