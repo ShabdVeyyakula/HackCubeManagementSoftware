@@ -15,7 +15,6 @@ import {
   } from 'react-router-dom'
 
 
-
 // Leftbar which has the navigation icons
 
 export class leftbar extends Component {
