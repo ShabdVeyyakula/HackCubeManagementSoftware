@@ -474,6 +474,67 @@ body{
   -ms-overflow-style: none;  /* IE and Edge /
   scrollbar-width: none;  / Firefox */
   font-family: 'Poppins', sans-serif;
+}
 
+/* Messages CSS */
+.messagesPageSideBar{
+  width: 30vh;
+  height: 80vh;
+  background-color: #F3F3F3;
+  margin-left: 5%;
+  margin-top: 5%;
+  border-radius: 5px 0px 0px 5px;
+}
 
+.messagesPageHead{
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  margin-top: 10%;
+  margin-left: 10%;
+}
+
+.messagesPageClubChat{
+  margin-left: 10%;
+  margin-top: 15%;
+}
+
+.messagesPageMainBar{
+  width: 100vh;
+  height: 80vh;
+  margin-left: 0%;
+  margin-top: 5%;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.messagesPageContentBox{
+
+}
+
+.messagesPageTextBox{
+  width: 70vh;
+  height: 50px;
+  background-color: #EEEEEE;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 100px;
+}
+
+.messagesPageSendButton{
+  background-color: #8321FF;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  font-size: 35px;
+  color: white;
+  transition: 0.3s;
+  
+}
+
+.messagesPageSendButton:hover{
+  background-color: #a062f1;
+}
+
+.sendBarMessagesPage{
+  position: absolute;
+  bottom: 8vh;
 }

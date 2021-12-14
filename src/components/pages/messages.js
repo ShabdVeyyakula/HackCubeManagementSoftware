@@ -49,6 +49,39 @@ export class messages extends Component {
                     <Leftbar page = "messages"/>
                     <div className = "centerSection">
                         <Topbar />
+
+                        <div className = "rowFlex">
+
+                            <div className = "messagesPageSideBar">
+
+                                <h1 className = "messagesPageHead">Messages</h1>
+
+                                <div className = "messagesPageClubChat">
+
+                                    <h2>Club Chat</h2>
+                                    <h4>New Messages</h4>
+
+                                </div>
+
+                            </div>
+
+                            <div className = "messagesPageMainBar">
+
+                                <div className = "messagesPageContentBox">
+                                        
+                                </div>
+
+                                <div className = "rowFlex sendBarMessagesPage">
+                                    <input className = "messagesPageTextBox" />
+
+                            
+                                    <button className = "messagesPageSendButton">&gt;</button>
+                                </div>
+                                
+
+                            </div>
+
+                        </div>
                             
                     </div>
                     <Rightbar name = {this.state.name}/>
