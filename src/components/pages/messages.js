@@ -20,7 +20,6 @@ export class messages extends Component {
             texts: [],
         }
 
-        
         this.handleChange = this.handleChange.bind(this);
         this.sendText = this.sendText.bind(this);
     }
