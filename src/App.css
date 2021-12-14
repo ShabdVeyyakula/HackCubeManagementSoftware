@@ -182,6 +182,7 @@ body{
 .vl {
   border-left: 1px solid white;
   height: 80%;
+  font-family: 'Poppins', sans-serif;
 
 }
 
@@ -191,6 +192,7 @@ body{
   filter: invert(18%) sepia(87%) saturate(7469%) hue-rotate(268deg) brightness(101%) contrast(100%);
   margin-top: 2rem;
   margin-left: 2rem;
+  font-family: 'Poppins', sans-serif;
 
 
 }
@@ -199,12 +201,14 @@ body{
   width: 110%;
   margin-top: 2%;
   margin-left: 2%;
+  font-family: 'Poppins', sans-serif;
 }
 
 .topbar-text{
   font-size: 25px;
   font-weight: bold;
   margin-top: 1.5rem;
+  font-family: 'Poppins', sans-serif;
 }
 
 .eventBox{
@@ -222,6 +226,7 @@ body{
 
 .eventBoxContainer {
   margin-top: 10px;
+  font-family: 'Poppins', sans-serif;
 }
 
 
@@ -246,6 +251,7 @@ body{
 
 .someBackground{
   background-color: #F8F8F8;
+  font-family: 'Poppins', sans-serif;
 }
 
 .chatBoxSubmitBox{
@@ -353,6 +359,7 @@ body{
   font-family: 'Poppins', sans-serif;
     padding-left: 3rem;
   Padding-top: 3rem;
+  font-family: 'Poppins', sans-serif;
 }
 
 #modalHeader{
@@ -493,11 +500,13 @@ body{
   font-weight: bold;
   margin-top: 10%;
   margin-left: 10%;
+  font-family: 'Poppins', sans-serif;
 }
 
 .messagesPageClubChat{
   margin-left: 10%;
   margin-top: 15%;
+  font-family: 'Poppins', sans-serif;
 }
 
 .messagesPageMainBar{
@@ -514,6 +523,7 @@ body{
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
   height: 90%;
+  font-family: 'Poppins', sans-serif;
 }
 
 .messagesPageTextBox{
@@ -525,6 +535,7 @@ body{
   border-radius: 100px;
   padding-left: 2vh;
   font-size: 20px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .messagesPageSendButton{
@@ -563,6 +574,7 @@ body{
   padding-left: 5%;
   padding-top: 3%;
   font-weight: bold;
+  font-family: 'Poppins', sans-serif;
   
 }
 
@@ -583,6 +595,7 @@ body{
   border-radius: 10px;
   margin-top: 2%;
   margin-left: 5%;
+  font-family: 'Poppins', sans-serif;
 }
 
 .messagesPageMessageToTitle{
@@ -591,6 +604,7 @@ body{
   padding-left: 5%;
   padding-top: 3%;
   font-weight: bold;
+  font-family: 'Poppins', sans-serif;
   
 }
 
