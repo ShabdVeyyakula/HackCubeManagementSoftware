@@ -1,17 +1,16 @@
+// Imports
 import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
 import ChatContentDashboardLeft from './ChatContentDashboardLeft'
 import ChatContentDashboardRight from './ChatContentDashboardRight'
 import { getAuth } from "firebase/auth";
-
 import '../../App.css'
-
 import { onSnapshot, collection, query, addDoc, orderBy} from "firebase/firestore";
 import db from '../../firebase/init';
 
 class Chat extends Component {
     
-
+    // Default constructor with initial values
     constructor(props) {
         super(props);     
         this.state = {

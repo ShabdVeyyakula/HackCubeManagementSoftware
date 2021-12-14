@@ -10,12 +10,9 @@ import Eventcalendar from '../reusable/Eventcalendar';
 
 
 
-
-
-
 export class calendar extends Component {
 
-   
+   // Default constructor with initial values
     constructor(props) {
         super(props);     
         this.state = {
@@ -23,7 +20,7 @@ export class calendar extends Component {
         }
     }
     
-
+    // Gets locally signed in user from firebase auth instance
     getUser(){
         const auth = getAuth();
         const user = auth.currentUser;
@@ -33,22 +30,20 @@ export class calendar extends Component {
             const email = user.email;
             const photoURL = user.photoURL;
             const emailVerified = user.emailVerified;
-    
-            // The user's ID, unique to the Firebase project. Do NOT use
-            // this value to authenticate with your backend server, if
-            // you have one. Use User.getToken() instead.
             const uid = user.uid;
             this.state.name = displayName;
             this.setState({})
         }
     
     }
-    
+
+
+    // Executes code with component mounts (on load)
     componentDidMount() {
-        // your source code to load initial data
         this.getUser();
     }
 
+    // Renders output to the screen
     render() {
         return (
             <div>

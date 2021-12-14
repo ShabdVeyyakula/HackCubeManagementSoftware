@@ -1,3 +1,4 @@
+// Imports
 import React, { Component } from 'react';
 import '../../Login.css';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
@@ -5,7 +6,7 @@ import { Navigate } from "react-router-dom";
 
 export default class Login extends Component {
     
-
+    // Default constructor with initial values
    constructor(props) {
     super(props);     
     this.state = {
@@ -15,19 +16,16 @@ export default class Login extends Component {
         errorMessageLogin: "",
         redirect: null,
     };
-
     this.handleChangeLoginUsername = this.handleChangeLoginUsername.bind(this);
     this.handleChangeLoginPassword = this.handleChangeLoginPassword.bind(this);
-
     this.login = this.login.bind(this);
+    }
 
-}
+    handleChangeLoginUsername(event)  { this.setState({usernameLogin: event.target.value}) } // Handles username login input value onChange
+    handleChangeLoginPassword(event)  { this.setState({passwordLogin: event.target.value}) } // Handles password login input value onChange
 
-    handleChangeLoginUsername(event)  { this.setState({usernameLogin: event.target.value}) }
-    handleChangeLoginPassword(event)  { this.setState({passwordLogin: event.target.value}) }
-
+    // Logs user into firebase auth
   login(){
-
     const auth = getAuth();
     signInWithEmailAndPassword(auth, this.state.usernameLogin, this.state.passwordLogin)
       .then((userCredential) => {
@@ -37,8 +35,6 @@ export default class Login extends Component {
         console.log(user)
         this.state.errorMessageLogin = ""
         this.setState({redirect: "/dashboard"})
-
-        // ...
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -52,9 +48,9 @@ export default class Login extends Component {
         }
         this.setState({})
       });
-}
+    }
 
-
+    // Renders output to screen
     render() {
         if (this.state.redirect) {
             return <Navigate  to={this.state.redirect} />
@@ -106,7 +102,6 @@ export default class Login extends Component {
 		</div>
 	</div>
 	
-
 	<div id="dropDownSelect1"></div>
                 
             </div>

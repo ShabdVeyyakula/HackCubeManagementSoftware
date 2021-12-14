@@ -58,10 +58,7 @@ export class Topbar extends Component {
                         </div>
                         
                         </div>
-                    
                 </div>
-         
-                
             </div>
         )
     }

@@ -1,15 +1,15 @@
+// Imports
 import React, { Component } from 'react';
 import '../../Login.css';
-
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { onSnapshot, collection, query, addDoc, orderBy} from "firebase/firestore";
 import db from '../../firebase/init';
-
 import { Navigate } from "react-router-dom";
+
 
 export default class Signup extends Component {
     
-
+  // Default constructor with initial values
    constructor(props) {
     super(props);     
     this.state = {
@@ -20,25 +20,19 @@ export default class Signup extends Component {
         errorMessageLogin: "",
         redirect: null,
     };
-
     this.handleChangeSignupUsername = this.handleChangeSignupUsername.bind(this);
     this.handleChangeSignupPassword = this.handleChangeSignupPassword.bind(this);
     this.handleChangeSignupName = this.handleChangeSignupName.bind(this);
-
-
     this.createFirebaseUser = this.createFirebaseUser.bind(this);
+  }
 
 
-}
+    handleChangeSignupUsername(event) { this.setState({usernameSignup: event.target.value})} // Handles input change value for username
+    handleChangeSignupPassword(event) { this.setState({passwordSignup: event.target.value})} // Handles input change value for password
+    handleChangeSignupName(event) { this.setState({name: event.target.value})} // Handles input change value for name
 
 
-
-    handleChangeSignupUsername(event) { this.setState({usernameSignup: event.target.value})}
-    handleChangeSignupPassword(event) { this.setState({passwordSignup: event.target.value})}
-    handleChangeSignupName(event) { this.setState({name: event.target.value})}
-
-
-
+  // Creates user in firebase
   async createFirebaseUser(){
 
     if(this.state.usernameSignup != "" && this.state.passwordSignup != "" && this.state.name != ""){
@@ -48,9 +42,7 @@ export default class Signup extends Component {
           // Signed in 
           const user = userCredential.user;
           console.log(user)
-
           const auth = getAuth();
-
             updateProfile(auth.currentUser, {
                 displayName: this.state.name,
             }).then(async () => {
@@ -61,17 +53,13 @@ export default class Signup extends Component {
                   name: auth.currentUser.displayName,
                   })
                   
-
                     this.state.errorMessageLogin = ""
                     this.setState({redirect: "/login"})
 
-                // ...
             }).catch((error) => {
                 // An error occurred
                 this.state.errorMessageLogin = error.message
-                // ...
             });
-          // ...
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -79,19 +67,16 @@ export default class Signup extends Component {
           console.log(error)
           this.state.errorMessageLogin = errorMessage
           this.setState({})
-          // ..
         });
     } else {
         this.state.errorMessageLogin = "Fields cannot be empty"
           this.setState({})
       console.log("Fields are empty")
     }
-
-    
   }
 
 
-
+    // Renders output to screen
     render() {
         if (this.state.redirect) {
             return <Navigate  to={this.state.redirect} />

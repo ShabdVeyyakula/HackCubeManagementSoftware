@@ -1,3 +1,4 @@
+// Imports
 import React, { Component } from 'react'
 import '../../App.css'
 import Leftbar from  '../navbars/Leftbar'
@@ -12,6 +13,7 @@ import db from '../../firebase/init';
 
 export class messages extends Component {
 
+        // Default constructor with initial values
         constructor(props) {
         super(props);     
         this.state = {
@@ -19,14 +21,15 @@ export class messages extends Component {
             textInput: '',
             texts: [],
         }
-
         this.handleChange = this.handleChange.bind(this);
         this.sendText = this.sendText.bind(this);
     }
 
     
-    handleChange(event) {  this.setState({textInput:  event.target.value})  }
+    handleChange(event) {  this.setState({textInput:  event.target.value})  } // Handles text on change from input
 
+
+    // Gets texts from the global chat
     async getTexts(){
 
         const auth = getAuth();
@@ -37,7 +40,6 @@ export class messages extends Component {
             this.state.name =  displayName;
             this.setState({})
 
-            
             const q = query(collection(db.db, "Clubs/0001/Chats"), orderBy("timestamp", "asc"));
             const unsubscribe = onSnapshot(q, (querySnapshot) => {
             var items = [];
@@ -64,9 +66,6 @@ export class messages extends Component {
             this.texts = items;
             this.setState({texts: items})
             this.scrollToBottom();
-
-
-            //Chat.setState({update: 'Hello'});
             });
 
         }
@@ -74,6 +73,7 @@ export class messages extends Component {
         console.log("hello1111")
     }
 
+    // Scrolls to the bottom of the div
     scrollToBottom = () => {
         try{
             var objDiv = document.getElementById("messagesList");
@@ -84,7 +84,8 @@ export class messages extends Component {
 
       }
       
-
+    
+    // Gets locally signed in user from firebase auth instance
     getUser(){
         const auth = getAuth();
         const user = auth.currentUser;
@@ -94,19 +95,14 @@ export class messages extends Component {
             const email = user.email;
             const photoURL = user.photoURL;
             const emailVerified = user.emailVerified;
-    
-            // The user's ID, unique to the Firebase project. Do NOT use
-            // this value to authenticate with your backend server, if
-            // you have one. Use User.getToken() instead.
             const uid = user.uid;
             this.state.name = displayName;
             this.setState({})
         }
-    
     }
 
+    // Sends text to global chat, inserts into firestore db
     async sendText(){
-        //this.stateState({})
         console.log(this.state.textInput)
 
         const auth = getAuth();
@@ -114,14 +110,6 @@ export class messages extends Component {
         if (user !== null) {
             // The user object has basic properties such as display name, email, etc.
             const displayName = user.displayName;
-            //const email = user.email;
-            //const photoURL = user.photoURL;
-            //const emailVerified = user.emailVerified;
-
-            // The user's ID, unique to the Firebase project. Do NOT use
-            // this value to authenticate with your backend server, if
-            // you have one. Use User.getToken() instead.
-            //const uid = user.uid;
 
             if(this.state.textInput != ""){
                 await addDoc(collection(db.db, "Clubs/0001/Chats"), {
@@ -137,11 +125,14 @@ export class messages extends Component {
     }
 
     
+    // Executes code with component mounts (on load)
     componentDidMount() {
         // your source code to load initial data
         this.getUser();
         this.getTexts();
     }
+
+    // Renders output to screen
     render() {
         return (
             <div>

@@ -1,3 +1,4 @@
+// Imports
 import React, { Component } from 'react'
 import '../../App.css'
 import Leftbar from  '../navbars/Leftbar'
@@ -13,7 +14,8 @@ import { Modal } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
 
 export class gallery extends Component {
-
+    
+    // Default constructor with initial values
     constructor(props) {
         super(props);     
         this.state = {
@@ -28,22 +30,19 @@ export class gallery extends Component {
         this.handleChangeName = this.handleChangeName.bind(this);
         this.handleChangeURL = this.handleChangeURL.bind(this);
         this.handleClose = this.handleClose.bind(this);
-        
-
-
-
     }
 
+    // Publishes project to firebase firestore database with addDoc
     async publishProject(){
         await addDoc(collection(db.db, "Clubs/0001/Project Gallery"), {
             name: this.state.projectName,
             project_pic: this.state.projectPic
           });
-        
           this.handleClose()
-
     }
 
+
+    // Gets projects that are published for the club from database
     async getProjects(){
             const q = query(collection(db.db, "Clubs/0001/Project Gallery"));
             const unsubscribe = onSnapshot(q, (querySnapshot) => {
@@ -55,7 +54,6 @@ export class gallery extends Component {
 
                     if(data.name != "" && data.picture_url != ""){
                         items.push(<div className = "col-md-3"><Galleryitem name = {data.name} img = {data.project_pic}/></div>);
-
                     }
                 } catch (e){
                     console.log("error with pushing")
@@ -66,7 +64,7 @@ export class gallery extends Component {
         });
     }
     
-
+    // Gets locally signed in user from firebase auth instance
     getUser(){
         const auth = getAuth();
         const user = auth.currentUser;
@@ -76,37 +74,37 @@ export class gallery extends Component {
             const email = user.email;
             const photoURL = user.photoURL;
             const emailVerified = user.emailVerified;
-
-            // The user's ID, unique to the Firebase project. Do NOT use
-            // this value to authenticate with your backend server, if
-            // you have one. Use User.getToken() instead.
             const uid = user.uid;
             this.state.name = displayName;
             this.setState({})
         }
     }
 
+    // Executes code with component mounts (on load)
     componentDidMount() {
         // your source code to load initial data
         this.getUser();
         this.getProjects();
     }
 
+    
+    // Shows modal dialog
     showPopup(){
         console.log('/////////////////////////////////')
         this.setState({showModal: true})
 
     }
 
+    // Closes modal dialog
     handleClose(){
         this.setState({showModal: false})
     }
 
-    handleChangeName(event) {  this.setState({projectName:  event.target.value})  }
-    handleChangeURL(event) {  this.setState({projectPic:  event.target.value})  }
+    handleChangeName(event) {  this.setState({projectName:  event.target.value})  } // Handles project name input value onChange 
+    handleChangeURL(event) {  this.setState({projectPic:  event.target.value})  } // Handles project image URL input value onChange 
 
 
-
+    // Renders output to screen
     render() {
         return (
             <div>

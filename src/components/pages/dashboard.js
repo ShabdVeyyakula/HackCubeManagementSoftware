@@ -1,3 +1,4 @@
+// Imports
 import React, { Component } from 'react'
 import '../../App.css'
 import Leftbar from  '../navbars/Leftbar'
@@ -7,16 +8,12 @@ import Topbar from '../navbars/Topbar';
 import Event from '../reusable/Event'
 import Chat from '../reusable/Chat'
 import { getAuth } from "firebase/auth";
-
 import { doc, onSnapshot, collection, query, where, getDoc, addDoc, orderBy} from "firebase/firestore";
 import db from '../../firebase/init';
 
-
-
-
-
 export class dashboard extends Component {
 
+    // Default constructor with initial values
     constructor(props) {
         super(props);     
         this.state = {
@@ -27,6 +24,7 @@ export class dashboard extends Component {
         }
     }
 
+    // Gest the clubs stats such as upcoming events and club member count
     async getClubStats() {
         const q = query(collection(db.db, "Clubs/0001/Users"));
         const unsubscribe = onSnapshot(q, (querySnapshot) => {
@@ -41,11 +39,11 @@ export class dashboard extends Component {
                 }
             });
                 this.setState({users: usersCount});
-            //Chat.setState({update: 'Hello'});
             });
             console.log("did it work??")
     }
 
+    // Gets the upcomming events for the club
     async getEvents() {
         const q = query(collection(db.db, "Clubs/0001/Events"));
         const unsubscribe = onSnapshot(q, (querySnapshot) => {
@@ -69,13 +67,13 @@ export class dashboard extends Component {
                 this.eventsList = items;
                 this.state.eventsListLength = len
                 this.setState({});
-            //Chat.setState({update: 'Hello'});
             });
             console.log("did it work??")
     }
 
     
 
+    ///Gets locally signed in user from firebase auth instance
     getUser(){
         const auth = getAuth();
         const user = auth.currentUser;
@@ -85,10 +83,6 @@ export class dashboard extends Component {
             const email = user.email;
             const photoURL = user.photoURL;
             const emailVerified = user.emailVerified;
-
-            // The user's ID, unique to the Firebase project. Do NOT use
-            // this value to authenticate with your backend server, if
-            // you have one. Use User.getToken() instead.
             const uid = user.uid;
             this.state.name = displayName;
             this.setState({})
@@ -96,16 +90,16 @@ export class dashboard extends Component {
 
     }
 
+
+    // Initial on load to execute functions
     componentDidMount() {
-        // your source code to load initial data
         this.getUser();
         this.getEvents();
         this.getClubStats();
-
     }
 
 
-
+    //Renders output to the screen
     render() {
 
         return (
@@ -149,9 +143,6 @@ export class dashboard extends Component {
                                         </div>
 
                                     </div>
-
-                           
-                            
                                 </div>
                     </div>
                     <Rightbar name = {this.state.name}/>

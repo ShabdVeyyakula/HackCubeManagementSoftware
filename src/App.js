@@ -11,11 +11,11 @@ import {
 
 import Dashboard from "./components/pages/dashboard";
 import Messages from "./components/pages/messages";
-import Schedule from "./components/pages/schedule";
 import Gallery from "./components/pages/gallery";
 import Login from "./components/pages/login";
 import Signup from "./components/pages/signup";
 import Calendar from "./components/pages/calendar";
+import AboutUs from "./components/pages/AboutUs";
 
 
 //import Rightbar from './components/navbars/rightbar';
@@ -41,8 +41,6 @@ export default function App() {
         <Routes>
           <Route path='/dashboard' element={<Dashboard/>} />
 
-          <Route path='/schedule' element={<Schedule/>} />
-
           <Route path='/messages' element={<Messages/>} />
 
           <Route path='/gallery' element={<Gallery/>} />
@@ -52,6 +50,8 @@ export default function App() {
           <Route path='/signup' element={<Signup/>} />
 
           <Route path='/calendar' element={<Calendar/>} />
+
+          <Route path='/about' element={<AboutUs/>} />
 
 
 
