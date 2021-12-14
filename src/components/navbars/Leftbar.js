@@ -14,7 +14,7 @@ import {
 
 
 
-
+// Leftbar which has the navigation icons
 
 export class leftbar extends Component {
 
@@ -26,6 +26,8 @@ export class leftbar extends Component {
         }
     }
 
+    // Renders sidebar with selected icon depending on which page is clicked
+    
     componentDidMount(){
         console.log("this works dude")
 
@@ -56,7 +58,6 @@ export class leftbar extends Component {
 
 
             ];
-
         }
 
         if(this.props.page == "calendar"){
@@ -72,7 +73,6 @@ export class leftbar extends Component {
 
             </Link>,
 
-
             <Link Link to ='/messages'>
                 <img src = {Message} className = "leftBarIcon" />
 
@@ -80,13 +80,9 @@ export class leftbar extends Component {
 
             <Link Link to = '/gallery'>
                 <img src = {Pin} className = "leftBarIcon" />
-
-
             </Link>
 
-
             ];
-
         }
 
         if(this.props.page == "messages"){
@@ -102,7 +98,6 @@ export class leftbar extends Component {
 
             </Link>,
 
-
             <Link Link to ='/messages'>
                 <img src = {Message} className = "leftBarIcon selectedIcon" />
 
@@ -111,9 +106,7 @@ export class leftbar extends Component {
             <Link Link to = '/gallery'>
                 <img src = {Pin} className = "leftBarIcon" />
 
-
             </Link>
-
 
             ];
 
@@ -121,8 +114,7 @@ export class leftbar extends Component {
 
         if(this.props.page == "gallery"){
 
-            this.state.components = [
-                 
+            this.state.components = [ 
                 <Link Link to='/dashboard'>
                 <img src = {Box} className = "leftBarIcon"/>
                 </Link>,
@@ -132,7 +124,6 @@ export class leftbar extends Component {
 
             </Link>,
 
-
             <Link Link to ='/messages'>
                 <img src = {Message} className = "leftBarIcon" />
 
@@ -141,18 +132,15 @@ export class leftbar extends Component {
             <Link Link to = '/gallery'>
                 <img src = {Pin} className = "leftBarIcon selectedIcon" />
 
-
             </Link>
 
-
             ];
-
         }
 
         this.setState({})
-
     }
 
+    // Renders output to screen
     render() {
         return (
             <div>
@@ -164,11 +152,7 @@ export class leftbar extends Component {
                         <hr/>
                     </div>
 
-
                     {this.state.components}
-
-                   
-
 
                 </div>
             </div>

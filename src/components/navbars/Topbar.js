@@ -8,6 +8,8 @@ import { Navigate } from "react-router-dom";
 
 export class Topbar extends Component {
 
+
+    // Default constructor with initial values
     constructor(props) {
         super(props);     
         this.state = {
@@ -16,6 +18,7 @@ export class Topbar extends Component {
     }
     
 
+    // Logs out of firebase
     logout(){
         const auth = getAuth();
         signOut(auth).then(() => {
@@ -30,12 +33,12 @@ export class Topbar extends Component {
         
     }
 
+    // Renders output to screen
     render() {
 
         if (this.state.redirect) {
             return <Navigate  to={this.state.redirect} />
           }
-
 
         return (
             <div>

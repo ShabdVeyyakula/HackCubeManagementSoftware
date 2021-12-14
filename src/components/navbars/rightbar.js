@@ -3,7 +3,10 @@ import '../../App.css'
 import ScheduleLogo from './icons/tabler-icon-calendar-event.svg'
 import Profilepic from '../../components/navbars/icons/Profilepic'
 import SideBarPic from './icons/undraw_pair_programming_re_or4x 1.png'
+
 export class rightbar extends Component {
+
+    // Renders output to screen
     render() {
         return (
             <div>

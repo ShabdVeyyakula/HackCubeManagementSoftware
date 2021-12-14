@@ -125,7 +125,7 @@ export class gallery extends Component {
 
                     </Modal.Body>
                         <Modal.Footer>
-                        <Button variant="secondary" onClick={() => this.handleClose()}>
+                        <Button variant="secondary" onClick={() => window.location = '/gallery'}>
                             Cancel
                         </Button>
                         <Button variant="primary" onClick={() => this.publishProject()}>
