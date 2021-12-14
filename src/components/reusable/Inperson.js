@@ -1,8 +1,11 @@
+// Imports
 import React, { Component } from 'react'
 import '../../App.css'
 import Icon from '../navbars/icons/tabler-icon-map-pin.svg'
 
 export class Inperson extends Component {
+
+    // Renders output to screen
     render() {
         return (
             <div>

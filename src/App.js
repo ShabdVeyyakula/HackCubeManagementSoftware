@@ -1,6 +1,6 @@
+// Imports
 import React from "react";
 import ReactDOM from "react-dom";
-
 
 import {
   BrowserRouter as Router,
@@ -18,13 +18,8 @@ import Calendar from "./components/pages/calendar";
 import AboutUs from "./components/pages/AboutUs";
 
 
-//import Rightbar from './components/navbars/rightbar';
-//import Leftbar from './components/navbars/Leftbar';
-
-
-
-
 export default function App() {
+
 
   return (
     <Router>
@@ -65,4 +60,5 @@ export default function App() {
   );
 }
 
+// Renders main app
 ReactDOM.render(<App />, document.getElementById("root"));

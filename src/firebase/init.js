@@ -1,11 +1,10 @@
+// Imports
 import { initializeApp } from 'firebase/app';  
 import { getFirestore} from 'firebase/firestore';
-// Follow this pattern to import other Firebase services
-// import { } from 'firebase/<service>';
-
-// TODO: Replace the following with your app's Firebase project configuration
 
 
+
+// Expores firebase config
 const firebaseConfig = {
     apiKey: "AIzaSyBshXE-mSGLZx5-ABuIfzShOeOxBxu1vjE",
     authDomain: "hackcubeweb.firebaseapp.com",

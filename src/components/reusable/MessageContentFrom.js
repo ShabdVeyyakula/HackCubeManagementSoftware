@@ -1,7 +1,10 @@
+// Imports
 import React, { Component } from 'react'
 import '../../App.css'
 
 export class MessageContentFrom extends Component {
+
+    // Renders output to screen
     render() {
         return (
             <div>

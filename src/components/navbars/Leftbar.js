@@ -1,3 +1,5 @@
+
+// Imports
 import React, { Component } from 'react'
 import '../../App.css'
 import Profilepic from '../../components/navbars/icons/Profilepic'
@@ -18,6 +20,7 @@ import {
 
 export class leftbar extends Component {
 
+    // Default constructor with initial values
     constructor(props) {
         super(props);     
         this.state = {

@@ -1,6 +1,9 @@
+// Imports
 import React, { Component } from 'react'
 
 export class MessageContentTo extends Component {
+    
+    // Renders output to screen
     render() {
         return (
             <div>

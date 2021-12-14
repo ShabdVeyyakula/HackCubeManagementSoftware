@@ -1,12 +1,12 @@
+// Imports
 import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
 import Inperson from '../reusable/Inperson'
 import Online from '../reusable/Online'
 
-
-
 export class Event extends Component {
-
+    
+    // Default constructor with initial values
     constructor(props) {
         super(props);     
         this.state = {
@@ -14,6 +14,7 @@ export class Event extends Component {
         }
     }
 
+    // Executes code on load
     onLoad(){
         if(this.props.type == "online"){
             this.state.widget = <Online />
@@ -24,11 +25,12 @@ export class Event extends Component {
         }
     }
 
+    // Executes code with component mounts (on load)
     componentDidMount(){
         this.onLoad()
     }
     
-
+    // Renders output to screen
     render() {
         return (
             <div className='container eventBoxContainer'>

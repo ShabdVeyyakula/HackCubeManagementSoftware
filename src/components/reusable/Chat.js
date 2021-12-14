@@ -24,8 +24,9 @@ class Chat extends Component {
     }
 
     
-    handleChange(event) {  this.setState({textInput:  event.target.value})  }
+    handleChange(event) {  this.setState({textInput:  event.target.value})  } // Handles text input value onChange
 
+    // Gets texts of global chat from firestore db
     async getTexts(){
 
         const auth = getAuth();
@@ -34,19 +35,7 @@ class Chat extends Component {
             // The user object has basic properties such as display name, email, etc.
             const displayName = user.displayName;
             this.state.name =  displayName;
-            //const email = user.email;
-            //const photoURL = user.photoURL;
-            //const emailVerified = user.emailVerified;
-
-            // The user's ID, unique to the Firebase project. Do NOT use
-            // this value to authenticate with your backend server, if
-            // you have one. Use User.getToken() instead.
-
-            //const uid = user.uid;
-
             this.setState({})
-
-            
             const q = query(collection(db.db, "Clubs/0001/Chats"), orderBy("timestamp", "asc"));
             const unsubscribe = onSnapshot(q, (querySnapshot) => {
             var items = [];
@@ -65,15 +54,10 @@ class Chat extends Component {
                 } catch (e){
                     console.log("error with pushing")
                 }
-                
             });
-
             this.texts = items;
             this.setState({texts: items})
             this.scrollToBottom();
-
-
-            //Chat.setState({update: 'Hello'});
             });
 
         }
@@ -81,6 +65,7 @@ class Chat extends Component {
         console.log("hello1111")
     }
 
+    // Scrolls to bottom of div
     scrollToBottom = () => {
         try{
             var objDiv = document.getElementById("messagesList");
@@ -88,49 +73,35 @@ class Chat extends Component {
         } catch(e){
             console.log("ERROR")
         }
-
       }
       
-
+    // Executes code with component mounts (on load)
     componentDidMount() {
         // your source code to load initial data
         this.getTexts();
     }
 
-
-
+    // Sends text to global chat, inserts doc to firestore db
     async sendText(){
-        //this.stateState({})
         console.log(this.state.textInput)
-
         const auth = getAuth();
         const user = auth.currentUser;
         if (user !== null) {
             // The user object has basic properties such as display name, email, etc.
             const displayName = user.displayName;
-            //const email = user.email;
-            //const photoURL = user.photoURL;
-            //const emailVerified = user.emailVerified;
-
-            // The user's ID, unique to the Firebase project. Do NOT use
-            // this value to authenticate with your backend server, if
-            // you have one. Use User.getToken() instead.
-            //const uid = user.uid;
-
             if(this.state.textInput != ""){
                 await addDoc(collection(db.db, "Clubs/0001/Chats"), {
                     from: displayName,
                     text: this.state.textInput,
                     timestamp: Math.floor(Date.now() / 1000).toString()
                   });
-        
                   this.state.textInput = ""
                   this.setState({textInput: ""})
             }
         }
     }
     
-    
+    // Renders output to screen  
     render() {
         return (
             <div>
@@ -144,7 +115,6 @@ class Chat extends Component {
                         <div className = "rowFlex">
                             <input  type="text" value = {this.state.textInput} onChange={this.handleChange} className = "chatBoxSubmitBox"></input>
                             <button className = "chatBoxSubmitButton" onClick = {this.sendText}>&gt;</button>
-
                         </div>
                     </div>
                 </div>
@@ -153,5 +123,4 @@ class Chat extends Component {
     }
 }
 
-//test();
 export default Chat

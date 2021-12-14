@@ -1,3 +1,4 @@
+// Imports
 import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
 import Profilepic from '../navbars/icons/Profilepic'
@@ -5,6 +6,8 @@ import '../../App.css'
 
 
 export class ChatContentDashboardLeft extends Component {
+    
+    // Renders output to screen
     render() {
         return (
             <div className = "chatBoxContentSpacedLeft">
