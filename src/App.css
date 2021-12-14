@@ -511,6 +511,7 @@ body{
   overflow-x: hidden;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+  height: 90%;
 }
 
 .messagesPageTextBox{
