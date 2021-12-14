@@ -163,17 +163,14 @@ export class leftbar extends Component {
 
             <Link Link to ='/calendar'>
                 <img src = {Calendar} className = "leftBarIcon" />
-
             </Link>,
 
             <Link Link to ='/messages'>
                 <img src = {Message} className = "leftBarIcon" />
-
             </Link>,
 
             <Link Link to = '/gallery'>
                 <img src = {Pin} className = "leftBarIcon" />
-
             </Link>,
 
             <Link Link to = '/about'>
