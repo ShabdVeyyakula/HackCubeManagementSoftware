@@ -5,6 +5,8 @@ import Rightbar from '../navbars/rightbar'
 import 'bootstrap/dist/css/bootstrap.css';
 import Topbar from '../navbars/Topbar';
 import { getAuth } from "firebase/auth";
+import MessageContentFrom from '../reusable/MessageContentFrom';
+import MessageContentTo from '../reusable/MessageContentTo';
 
 export class messages extends Component {
 
@@ -68,7 +70,13 @@ export class messages extends Component {
                             <div className = "messagesPageMainBar">
 
                                 <div className = "messagesPageContentBox">
-                                        
+
+                                    <MessageContentFrom name = "Shabd Veyyakula" message = "Hello dude!"/>
+                                    <MessageContentTo name = "Shabd Veyyakula" message = "Hello dude!"/>
+
+                                    <MessageContentFrom name = "Shabd Veyyakula" message = "Hello dude!"/>
+                                    <MessageContentTo name = "Shabd Veyyakula" message = "Hello dude!"/>
+                                    
                                 </div>
 
                                 <div className = "rowFlex sendBarMessagesPage">
