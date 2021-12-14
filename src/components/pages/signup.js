@@ -88,42 +88,42 @@ export default class Signup extends Component {
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-85 p-b-20">
 				<div class="login100-form validate-form">
-					<span class="login100-form-title p-b-70">
+					<span class="login100-form-title p-b-70 fontUse">
 						Signup
 					</span>
 
 					<div class="wrap-input100 validate-input m-t-85 m-b-35 spaceButton" data-validate = "Enter username">
-						<input class="input100" type="text" placeholder="Email" value = {this.state.usernameSignup} onChange = {this.handleChangeSignupUsername}/>
-						<span class="focus-input100" data-placeholder="Email"></span>
+						<input class="input100 fontUse" type="text" placeholder="Email" value = {this.state.usernameSignup} onChange = {this.handleChangeSignupUsername}/>
+						<span class="focus-input100 fontUse" data-placeholder="Email"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-50 spaceButton" data-validate="Enter password">
-						<input class="input100" type="password" name="pass" placeholder = "Password" value = {this.state.passwordSignup} onChange = {this.handleChangeSignupPassword}/>
-						<span class="focus-input100" data-placeholder="Password" ></span>
+						<input class="input100 fontUse" type="password" name="pass" placeholder = "Password" value = {this.state.passwordSignup} onChange = {this.handleChangeSignupPassword}/>
+						<span class="focus-input100 fontUse" data-placeholder="Password" ></span>
 					</div>
 
                     <div class="wrap-input100 validate-input m-b-50 spaceButton" data-validate="Enter Name">
-						<input class="input100" type="text" name="pass" placeholder = "Full Name" value = {this.state.name} onChange = {this.handleChangeSignupName}/>
-						<span class="focus-input100" data-placeholder="Full Name" ></span>
+						<input class="input100 fontUse" type="text" name="pass" placeholder = "Full Name" value = {this.state.name} onChange = {this.handleChangeSignupName}/>
+						<span class="focus-input100 fontUse" data-placeholder="Full Name" ></span>
 					</div>
 
                     <div>
-                        <p className = "redText">{this.state.errorMessageLogin}</p>
+                        <p className = "redText fontUse">{this.state.errorMessageLogin}</p>
                     </div>
 
 					<div class="container-login100-form-btn spaceButton">
-						<button type="button" class="login100-form-btn" onClick= {this.createFirebaseUser}>
+						<button type="button" class="login100-form-btn fontUse" onClick= {this.createFirebaseUser}>
 							Signup
 						</button>
 					</div>
 
 					<ul class="login-more p-t-190 spaceButton">
 						<li>
-							<span class="txt1">
+							<span class="txt1 fontUse">
 								Already have an account?
 							</span>
 
-							<a href="/login" class="txt2 spaceWidth">
+							<a href="/login" class="txt2 spaceWidth fontUse">
 								Login
 							</a>
 						</li>

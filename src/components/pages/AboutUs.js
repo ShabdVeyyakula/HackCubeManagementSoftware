@@ -97,8 +97,6 @@ export class AboutUs extends Component {
                                                     <p className='bioDescription'>Hey! My name's Malco and I'm a student currently attending MHHS. I'm a student interested in building up my skillset in all-things coding, whether that be web or app developing.</p>
                                                 </center>
                                             </div>
-                                           
-                                            
                                         </div>
 
                                     </div>

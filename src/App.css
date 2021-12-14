@@ -360,7 +360,6 @@ body{
   font-family: 'Poppins', sans-serif;
     padding-left: 3rem;
   Padding-top: 3rem;
-  font-family: 'Poppins', sans-serif;
 }
 
 #modalHeader{
@@ -605,7 +604,6 @@ body{
   padding-left: 5%;
   padding-top: 3%;
   font-weight: bold;
-  font-family: 'Poppins', sans-serif;
   
 }
 
@@ -666,4 +664,8 @@ body{
 .bioDescription{
   margin-top: 5%;
   max-width: 60%;
+}
+
+.fontUse{
+  font-family: 'Poppins', sans-serif;
 }
