@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import '../../Login.css';
 
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { onSnapshot, collection, query, addDoc, orderBy} from "firebase/firestore";
+import db from '../../firebase/init';
 
 import { Navigate } from "react-router-dom";
 
@@ -37,34 +39,38 @@ export default class Signup extends Component {
 
 
 
-  createFirebaseUser(){
+  async createFirebaseUser(){
 
     if(this.state.usernameSignup != "" && this.state.passwordSignup != "" && this.state.name != ""){
       const auth = getAuth();
       createUserWithEmailAndPassword(auth, this.state.usernameSignup, this.state.passwordSignup)
-        .then((userCredential) => {
+        .then(async (userCredential) => {
           // Signed in 
           const user = userCredential.user;
           console.log(user)
-
-
-
 
           const auth = getAuth();
 
             updateProfile(auth.currentUser, {
                 displayName: this.state.name,
-            }).then(() => {
+            }).then(async () => {
                 // Profile updated!
-                this.state.errorMessageLogin = ""
-                this.setState({redirect: "/login"})
+
+                await addDoc(collection(db.db, "Clubs/0001/Users"), {
+                  email: auth.currentUser.email,
+                  name: auth.currentUser.displayName,
+                  })
+                  
+
+                    this.state.errorMessageLogin = ""
+                    this.setState({redirect: "/login"})
+
                 // ...
             }).catch((error) => {
                 // An error occurred
                 this.state.errorMessageLogin = error.message
                 // ...
             });
-
           // ...
         })
         .catch((error) => {

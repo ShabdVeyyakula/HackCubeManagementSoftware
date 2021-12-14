@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import '../../Login.css';
-
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-
 import { Navigate } from "react-router-dom";
 
 export default class Login extends Component {

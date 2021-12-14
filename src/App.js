@@ -22,17 +22,18 @@ import Calendar from "./components/pages/calendar";
 //import Leftbar from './components/navbars/Leftbar';
 
 
+
+
 export default function App() {
 
   return (
     <Router>
       <div>
-
-
-      
         <nav>
           
         </nav>
+
+         
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}

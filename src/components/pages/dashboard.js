@@ -17,51 +17,63 @@ import db from '../../firebase/init';
 
 export class dashboard extends Component {
 
-    async getEvents() {
-        const q = query(collection(db.db, "Clubs/0001/Events"));
-        const unsubscribe = onSnapshot(q, (querySnapshot) => {
-            var items = [];
-            querySnapshot.forEach((doc) => {
-                try{
-                    var data = doc.data();
-                    console.log(data);
-
-                    if (data.type == "online") {
-                        items.push(<Event eventName={data.name} eventDate = {data.date} type="online" />);
-
-
-                    } else {
-                        items.push(<Event eventName={data.name} eventDate = {data.date} type="inperson" />);
-
-                    }
-                    
-
-
-                    
-
-                } catch (e){
-                    console.log("error with pushing")
-                }
-                
-            });
-                this.eventsList = items;
-                this.setState({});
-
-            //Chat.setState({update: 'Hello'});
-            });
-
-            console.log("did it work??")
-    }
-
-    
-
     constructor(props) {
         super(props);     
         this.state = {
             name: "",
             eventsList: [],
+            users: 0,
+            eventsListLength: 0,
         }
     }
+
+    async getClubStats() {
+        const q = query(collection(db.db, "Clubs/0001/Users"));
+        const unsubscribe = onSnapshot(q, (querySnapshot) => {
+            var usersCount = 0;
+            querySnapshot.forEach((doc) => {
+                try{
+                    var data = doc.data();
+                    usersCount += 1
+                    
+                } catch (e){
+                    console.log("error with pushing")
+                }
+            });
+                this.setState({users: usersCount});
+            //Chat.setState({update: 'Hello'});
+            });
+            console.log("did it work??")
+    }
+
+    async getEvents() {
+        const q = query(collection(db.db, "Clubs/0001/Events"));
+        const unsubscribe = onSnapshot(q, (querySnapshot) => {
+            var items = [];
+            var len = 0;
+            querySnapshot.forEach((doc) => {
+                try{
+                    var data = doc.data();
+                    console.log(data);
+                    len += 1
+                    if (data.type == "online") {
+                        items.push(<Event eventName={data.name} eventDate = {data.date} type="online" />);
+                    } else {
+                        items.push(<Event eventName={data.name} eventDate = {data.date} type="inperson" />);
+                    }
+                    
+                } catch (e){
+                    console.log("error with pushing")
+                }
+            });
+                this.eventsList = items;
+                this.state.eventsListLength = len
+                this.setState({});
+            //Chat.setState({update: 'Hello'});
+            });
+            console.log("did it work??")
+    }
+
     
 
     getUser(){
@@ -88,6 +100,8 @@ export class dashboard extends Component {
         // your source code to load initial data
         this.getUser();
         this.getEvents();
+        this.getClubStats();
+
     }
 
 
@@ -106,17 +120,17 @@ export class dashboard extends Component {
                                                 <div className = "row">
                                                     <div className = "col">
                                                         <p className = "stats-box-title">Upcoming Events</p>
-                                                        <p className = "stats-box-subtitle">50</p>
+                                                        <p className = "stats-box-subtitle">{this.state.eventsListLength}</p>
                                                     </div>
 
                                                     <div className = "col">
                                                         <p className = "stats-box-title">Attended Events</p>
-                                                        <p className = "stats-box-subtitle">50</p>
+                                                        <p className = "stats-box-subtitle">0</p>
                                                     </div>
 
                                                     <div className = "col">
                                                         <p className = "stats-box-title">Club Members</p>
-                                                        <p className = "stats-box-subtitle">50</p>
+                                                        <p className = "stats-box-subtitle">{this.state.users}</p>
                                                     </div>
                                                 </div>
                                             </center>
