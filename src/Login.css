@@ -466,3 +466,7 @@
 .redText{
   color: red;
 }
+
+.fontUse{
+  font-family: 'Poppins', sans-serif;
+}
