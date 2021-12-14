@@ -473,10 +473,133 @@ body{
   width:450px;
   margin-left: 70px;
   overflow:auto;
-  -ms-overflow-style: none;  /* IE and Edge /
-  scrollbar-width: none;  / Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
   font-family: 'Poppins', sans-serif;
+}
 
+/* Messages CSS */
+.messagesPageSideBar{
+  width: 30vh;
+  height: 80vh;
+  background-color: #F3F3F3;
+  margin-left: 5%;
+  margin-top: 5%;
+  border-radius: 5px 0px 0px 5px;
+}
+
+.messagesPageHead{
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  margin-top: 10%;
+  margin-left: 10%;
+}
+
+.messagesPageClubChat{
+  margin-left: 10%;
+  margin-top: 15%;
+}
+
+.messagesPageMainBar{
+  width: 100vh;
+  height: 80vh;
+  margin-left: 0%;
+  margin-top: 5%;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.messagesPageContentBox{
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  height: 90%;
+}
+
+.messagesPageTextBox{
+  width: 90vh;
+  height: 50px;
+  background-color: #EEEEEE;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 100px;
+  padding-left: 2vh;
+  font-size: 20px;
+}
+
+.messagesPageSendButton{
+  background-color: #8321FF;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  font-size: 35px;
+  color: white;
+  transition: 0.3s;
+  
+}
+
+.messagesPageSendButton:hover{
+  background-color: #a062f1;
+}
+
+.sendBarMessagesPage{
+  position: absolute;
+  bottom: 8vh;
+}
+
+/* Messages Page From Message*/
+.messagesPageMessageFrom{
+  height: inherit;
+  width: 45%;
+  background-color: #8321FF; 
+  border-radius: 10px;
+  margin-top: 2%;
+  margin-left: 47vh;
+}
+
+.messagesPageMessageFromTitle{
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  padding-left: 5%;
+  padding-top: 3%;
+  font-weight: bold;
+  
+}
+
+.messagesPageMessageFromText{
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  padding-left: 5%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+
+}
+
+/* Messages Page To Message*/
+.messagesPageMessageTo{
+  height: inherit;
+  width: 45%;
+  background-color: #DDDDDD; 
+  border-radius: 10px;
+  margin-top: 2%;
+  margin-left: 5%;
+}
+
+.messagesPageMessageToTitle{
+  color: black;
+  font-family: 'Poppins', sans-serif;
+  padding-left: 5%;
+  padding-top: 3%;
+  font-weight: bold;
+  
+}
+
+.messagesPageMessageToText{
+  color: black;
+  font-family: 'Poppins', sans-serif;
+  padding-left: 5%;
+  padding-top: 1%;
+  padding-bottom: 1%;
 
 }
 
