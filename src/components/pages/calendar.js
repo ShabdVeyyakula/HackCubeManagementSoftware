@@ -50,7 +50,7 @@ export class calendar extends Component {
             <div>
                 <div className = "someBackground"> 
                 <div className = "pageLayout">
-                    <Leftbar />
+                    <Leftbar page = "calendar"/>
                     <div className = "centerSection">
                         <Topbar />
                             

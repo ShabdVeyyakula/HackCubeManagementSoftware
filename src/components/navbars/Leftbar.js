@@ -18,57 +18,156 @@ import {
 
 export class leftbar extends Component {
 
-
-
-   
-
-    dashboardPressed() {
-        
+    constructor(props) {
+        super(props);     
+        this.state = {
+         page: "",
+         components: []
+        }
     }
 
-    calendarPressed() {
+    componentDidMount(){
+        console.log("this works dude")
+
+        if(this.props.page == "dashboard"){
+
+            this.state.components = [
+                 
+                <Link Link to='/dashboard'>
+                <img src = {Box} className = "leftBarIcon selectedIcon"/>
+                </Link>,
+
+            <Link Link to ='/calendar'>
+                <img src = {Calendar} className = "leftBarIcon" />
+
+            </Link>,
+
+
+            <Link Link to ='/messages'>
+                <img src = {Message} className = "leftBarIcon" />
+
+            </Link>,
+
+            <Link Link to = '/gallery'>
+                <img src = {Pin} className = "leftBarIcon" />
+
+
+            </Link>
+
+
+            ];
+
+        }
+
+        if(this.props.page == "calendar"){
+
+            this.state.components = [
+                 
+                <Link Link to='/dashboard'>
+                <img src = {Box} className = "leftBarIcon"/>
+                </Link>,
+
+            <Link Link to ='/calendar'>
+                <img src = {Calendar} className = "leftBarIcon selectedIcon" />
+
+            </Link>,
+
+
+            <Link Link to ='/messages'>
+                <img src = {Message} className = "leftBarIcon" />
+
+            </Link>,
+
+            <Link Link to = '/gallery'>
+                <img src = {Pin} className = "leftBarIcon" />
+
+
+            </Link>
+
+
+            ];
+
+        }
+
+        if(this.props.page == "messages"){
+
+            this.state.components = [
+                 
+                <Link Link to='/dashboard'>
+                <img src = {Box} className = "leftBarIcon"/>
+                </Link>,
+
+            <Link Link to ='/calendar'>
+                <img src = {Calendar} className = "leftBarIcon" />
+
+            </Link>,
+
+
+            <Link Link to ='/messages'>
+                <img src = {Message} className = "leftBarIcon selectedIcon" />
+
+            </Link>,
+
+            <Link Link to = '/gallery'>
+                <img src = {Pin} className = "leftBarIcon" />
+
+
+            </Link>
+
+
+            ];
+
+        }
+
+        if(this.props.page == "gallery"){
+
+            this.state.components = [
+                 
+                <Link Link to='/dashboard'>
+                <img src = {Box} className = "leftBarIcon"/>
+                </Link>,
+
+            <Link Link to ='/calendar'>
+                <img src = {Calendar} className = "leftBarIcon" />
+
+            </Link>,
+
+
+            <Link Link to ='/messages'>
+                <img src = {Message} className = "leftBarIcon" />
+
+            </Link>,
+
+            <Link Link to = '/gallery'>
+                <img src = {Pin} className = "leftBarIcon selectedIcon" />
+
+
+            </Link>
+
+
+            ];
+
+        }
+
+        this.setState({})
 
     }
-
-    messagesPressed() {
-
-    }
-
-    galleryPressed() {
-
-    }
-
 
     render() {
         return (
             <div>
                 <div className = "leftbar col">
                     <Profilepic />
+
+                    
                     <div className = "divider-left-bar">
                         <hr/>
                     </div>
-                    
-                    <Link Link to='/dashboard'>
-                        <img src = {Box} className = "leftBarIcon"/>
-                    </Link>
-
-                    <Link Link to ='/calendar'>
-                        <img src = {Calendar} className = "leftBarIcon" />
-
-                    </Link>
 
 
-                    <Link Link to ='/messages'>
-                        <img src = {Message} className = "leftBarIcon" />
+                    {this.state.components}
 
-                    </Link>
-
-                    <Link Link to = '/gallery'>
-                        <img src = {Pin} className = "leftBarIcon" />
-
-
-                    </Link>
-
+                   
 
 
                 </div>

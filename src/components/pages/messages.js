@@ -46,7 +46,7 @@ export class messages extends Component {
                  <div>
                 <div className = "someBackground"> 
                 <div className = "pageLayout">
-                    <Leftbar />
+                    <Leftbar page = "messages"/>
                     <div className = "centerSection">
                         <Topbar />
                             

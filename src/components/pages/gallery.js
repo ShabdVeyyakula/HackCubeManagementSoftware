@@ -19,9 +19,28 @@ export class gallery extends Component {
         this.state = {
             name: "",
             projects: [],
-            showModal: false
+            showModal: false,
+            projectName: "",
+            projectPic: ""
         }
         this.showPopup = this.showPopup.bind(this);
+        this.publishProject = this.publishProject.bind(this);
+        this.handleChangeName = this.handleChangeName.bind(this);
+        this.handleChangeURL = this.handleChangeURL.bind(this);
+        this.handleClose = this.handleClose.bind(this);
+        
+
+
+
+    }
+
+    async publishProject(){
+        await addDoc(collection(db.db, "Clubs/0001/Project Gallery"), {
+            name: this.state.projectName,
+            project_pic: this.state.projectPic
+          });
+        
+          this.handleClose()
 
     }
 
@@ -83,6 +102,11 @@ export class gallery extends Component {
         this.setState({showModal: false})
     }
 
+    handleChangeName(event) {  this.setState({projectName:  event.target.value})  }
+    handleChangeURL(event) {  this.setState({projectPic:  event.target.value})  }
+
+
+
     render() {
         return (
             <div>
@@ -96,22 +120,22 @@ export class gallery extends Component {
                             List a project that you made below!
                         </p>
 
-                        <input placeholder = "Project Name" className = "createProjectModalInput"/>
-                        <input placeholder = "Project Image URL" className = "createProjectModalInput"/>
+                        <input placeholder = "Project Name" className = "createProjectModalInput" value = {this.state.projectName} onChange={this.handleChangeName}/>
+                        <input placeholder = "Project Image URL" className = "createProjectModalInput" value = {this.state.projectState} onChange={this.handleChangeURL}/>
 
                     </Modal.Body>
                         <Modal.Footer>
                         <Button variant="secondary" onClick={() => this.handleClose()}>
-                            Close
+                            Cancel
                         </Button>
-                        <Button variant="primary" onClick={() => this.handleClose()}>
-                            Save Changes
+                        <Button variant="primary" onClick={() => this.publishProject()}>
+                            Publish Project
                         </Button>
                         </Modal.Footer>
             </Modal>
 
                 <div className = "pageLayout">
-                    <Leftbar />
+                    <Leftbar page = "gallery"/>
                     <div className = "centerSection">
                         <Topbar />
                         <div className = "rowFlex">

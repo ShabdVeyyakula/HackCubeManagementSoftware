@@ -97,7 +97,7 @@ export class dashboard extends Component {
         return (
             <div className = "someBackground"> 
                 <div className = "pageLayout">
-                    <Leftbar />
+                    <Leftbar page = "dashboard"/>
                     <div className = "centerSection">
                         <Topbar />
                             <div class="d-flex justify-content-center">
